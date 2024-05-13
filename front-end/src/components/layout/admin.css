@@ -1,0 +1,55 @@
+body{
+    background:url(/public/particle-lines-futuristic-gradient-background.jpg);
+}
+h2{
+    color: #090216;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    padding: 50px ;
+    border-bottom: 3px solid #0951ae ;
+    border-radius: 20px;
+}
+li{
+
+margin: 15px 10px;
+padding: 10px;
+border-radius: 20px;
+
+}
+li:hover{
+    background:linear-gradient(35deg,#4752a9,#6cc1db);
+    
+    cursor: pointer;
+}
+a:hover{
+    color: #000;
+    font-weight: 500;
+}
+nav{
+    
+    width: 350px;
+    height: 100vh;
+    border-right:5px solid #351663 ;
+    border-top:2px solid #090909 ;
+    border-radius: 20px;
+}nav ul{
+    padding-top: 20px ;
+    
+}
+a{
+    font-size: 25px;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 10px;
+    color: #0c0b0b;
+ 
+}
+div{
+    position: relative;
+}
+main{
+    position: absolute;
+    top: 80px;
+    left: 120px;
+}
