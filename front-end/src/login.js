@@ -14,13 +14,14 @@ function handleSubmit(event){
       console.log(res);
       if(res.data=="Success")
         {
-      console.log(123);
+      
           
           navigate("/admin");
           
         }
         else{
           console.log(res); 
+          alert("Thông Tin Tài Khoản Hoặc Mật Khẩu Ko Chính Xác");
         }
 
     }
@@ -46,6 +47,7 @@ function handleSubmit(event){
             onChange={e=> setPassword(e.target.value)}/>
           </div>
           <button className="login">Login</button>
+          <p>Don't have account?<a href="#">Sign Up</a></p>
         </form>
       </div>
     </div>

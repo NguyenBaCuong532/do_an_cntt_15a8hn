@@ -1,7 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import AdminLayout from "./layout/adminlayout";
-import './quanliphongmay.css'
+import './quanliphongmay.css';
 function Quanliphongmay() {
+  const navigate= useNavigate();
+  function createNew(){
+    navigate("/");
+  }
   return (
     <div >
       <AdminLayout>
@@ -41,7 +46,8 @@ function Quanliphongmay() {
   </tr>
 </table>
         </div>
-        <div className="table-search">
+        <div className="table-search_1">
+          <button onClick={createNew}>Tạo Mới</button>
       <table>
   <tr>
     <th>STT</th>
