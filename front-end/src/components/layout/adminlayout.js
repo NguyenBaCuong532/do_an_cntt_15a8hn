@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./admin.css";
+import PersonIcon from '@mui/icons-material/Person';
 
 function AdminLayout(props) {
   return (
-    <div className="">
-      <nav className="side-nav">
-        <h2>ADMIN</h2>
+    <div className="admin-container">
+      <nav className="side-nav bg-[#0E131F]" >
+        <h2 className="text-white font-bold">ADMIN</h2>
         <ul>
           <li>
+            <PersonIcon className="!text-[#fff] !w-10 !h-10"/>
             <Link to="/quanlitaikhoan">Quản Lí Tài Khoản</Link>
           </li>
           <li>
