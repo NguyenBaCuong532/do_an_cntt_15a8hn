@@ -1,7 +1,7 @@
 body{
-    background:url(/public/particle-lines-futuristic-gradient-background.jpg);
+    
 }
-h2{
+.side-nav h2{
     color: #090216;
     font-size: 40px;
     font-family: 'Courier New', Courier, monospace;

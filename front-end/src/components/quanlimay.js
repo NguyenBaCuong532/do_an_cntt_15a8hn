@@ -1,6 +1,6 @@
 import React from "react";
 import AdminLayout from "./layout/adminlayout";
-function Quanlikhuvuc() {
+function quanlimay() {
   return (
     <div >
       <AdminLayout>
@@ -11,4 +11,4 @@ function Quanlikhuvuc() {
   )
 }
 
-export default Quanlikhuvuc;
+export default quanlimay;

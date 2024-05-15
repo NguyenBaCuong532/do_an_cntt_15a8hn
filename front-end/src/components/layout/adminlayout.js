@@ -9,23 +9,23 @@ function AdminLayout(props) {
         <h2>ADMIN</h2>
         <ul>
           <li>
-            <Link to="/bangdieukhien">Bảng điều khiển</Link>
+            <Link to="/quanlitaikhoan">Quản Lí Tài Khoản</Link>
           </li>
           <li>
-            <Link to="/quanlikhuvuc">Quản lí khu vực</Link>
+           <Link to="/quanliphongmay">Quản Lí Phòng Máy</Link>
           </li>
           <li>
-            <Link to="/quanliphongmay">Quản lí phòng máy</Link>
+             <Link to="/quanlithietbi">Quản Lí Thiết Bị</Link>
           </li>
 
           <li>
-            <Link to="/quanlicauhinh">Quản lí cấu hình</Link>
+            <Link to="/quanlicauhinh">Quản Lí Cấu Hình</Link>
           </li>
           <li>
-            <Link to="/quanlimonhoc">Quản lí môn học</Link>
+            <Link to="/quanlimay">Quản Lí Máy</Link>
           </li>
           <li>
-            <Link to="/quanligiaovien">Quản lí giáo viên</Link>
+            <Link to="/lichsusuadoi">Lịch Sử Sửa Đổi</Link>
           </li>
         </ul>
       </nav>

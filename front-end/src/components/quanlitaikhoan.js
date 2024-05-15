@@ -1,8 +1,8 @@
 import React from "react";
-import "./bangdieukhien.css";
+import "./quanlitaikhoan.css";
 import AdminLayout from "./layout/adminlayout";
 
-function Bangdieukhien() {
+function quanlitaikhoan() {
   return (
     <AdminLayout>
       <div className="bangdiekhien">
@@ -19,7 +19,7 @@ function Bangdieukhien() {
           </div>
           <form className="search-form">
             <div className="search">
-              <input className="search-input" placeholder="Mã Phòng" />
+              <input  className="search-input" placeholder="Mã Phòng" />
               <input className="search-input" placeholder="Tên Phòng" />
               <select name="chonphong" id="">
                 <option value="">Chọn loại phòng</option>
@@ -50,4 +50,4 @@ function Bangdieukhien() {
   );
 }
 
-export default Bangdieukhien;
+export default quanlitaikhoan;

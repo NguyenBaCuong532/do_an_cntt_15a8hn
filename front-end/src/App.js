@@ -1,25 +1,25 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Bangdieukhien from "./components/bangdieukhien";
-import Quanlikhuvuc from "./components/quanlikhuvuc";
-import Login from "./login";
-import Admin from "./router/admin";
+import Lichsusuadoi from "./components/lichsusuadoi";
 import Quanlicauhinh from "./components/quanlicauhinh";
-import Quanligiaovien from "./components/quanligiaovien";
-import Quanlimnhoc from "./components/quanlimonhoc";
+import Quanlimay from "./components/quanlimay";
 import Quanliphongmay from "./components/quanliphongmay";
+import Quanlitaikhoan from "./components/quanlitaikhoan";
+import Quanlithietbi from "./components/quanlithietbi";
+import Admin from "./router/admin";
 function App() {
   return (
-    <div className="App">
+    <div className="App"> <Quanliphongmay/>
       <Routes>
-        <Route path="/" element={<Login />}/>
+        {/* <Route path="/" element={<Login />}/> 
         <Route path="/admin" element={<Admin />} />
-        <Route path="/bangdieukhien" element={<Bangdieukhien />} />
-        <Route path="/quanlikhuvuc" element={<Quanlikhuvuc />} />
+        <Route path="/quanlitaikhoan" element={<Quanlitaikhoan />} />
+        <Route path="/quanlimay" element={<Quanlimay />} />
         <Route path="/quanlicauhinh" element={<Quanlicauhinh />} />
-        <Route path="/quanligiaovien" element={<Quanligiaovien />} />
+        <Route path="/quanlithietbi" element={<Quanlithietbi />} />
         <Route path="/quanliphongmay" element={<Quanliphongmay />} />
-        <Route path="/quanlimonhoc" element={<Quanlimnhoc />} />
+        <Route path="/lichsusuadoi" element={<Lichsusuadoi />} />*/}
+       
 
       </Routes>
     </div>

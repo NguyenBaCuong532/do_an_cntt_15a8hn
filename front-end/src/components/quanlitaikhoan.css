@@ -1,4 +1,4 @@
-h3{
+ h3{
     font-size: 30px;
     position: relative;
     margin-top: 10px;
@@ -43,6 +43,7 @@ select,
     padding: 5px 15px;
     background: none;
     color: #000;
+   
 }
 select:hover{
 cursor: 
@@ -85,12 +86,13 @@ pointer;
 }
 .select-form.form1{
     margin-top: 90px;
+    margin-left: 40px;
     
 }
 
 .search1{
     width: 700px;
-    padding: 80px;
+    margin: 80px;
    display: flex;
    margin-left: -510px;
    

@@ -8,7 +8,7 @@
 .content{
     width: 100%;
     height: 100vh;
-    background:url(../public/5063667.jpg) center/cover no-repeat;
+    background:url(../public/bann.jpg) ;
     padding: 200px 0;
 }
 h1{
@@ -20,6 +20,8 @@ h1{
     letter-spacing: 2px;
     margin-top: -100px;
     color: #ffffff;
+    text-shadow: -6px 8px 7px #151114
+
     
     
 }
@@ -53,6 +55,8 @@ h1{
     font-size: 19px;
     color: #ffffff;
     margin-left: 10px;
+    text-shadow: -6px 8px 7px #151114
+
 }
 form input[type="password"], form input[type="text"] {
     width: 310px;
@@ -89,8 +93,9 @@ form input[type="password"], form input[type="text"] {
 }
 .login:hover{
     transition: background-color 0.7s;
-    background-color: rgba(40, 67, 156, 0.6);
+   border: 3px solid #2052ce;
     font-weight: 800;
+    color: #3f46d7;
    
 
 }

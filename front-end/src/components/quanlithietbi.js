@@ -1,6 +1,6 @@
 import React from "react";
 import AdminLayout from "./layout/adminlayout";
-function Quanligiaovien() {
+function quanlithietbi() {
   return (
     <div >
       <AdminLayout>
@@ -11,4 +11,4 @@ function Quanligiaovien() {
   )
 }
 
-export default Quanligiaovien;
+export default quanlithietbi;
