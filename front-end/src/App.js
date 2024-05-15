@@ -1,16 +1,11 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Lichsusuadoi from "./components/lichsusuadoi";
-import Quanlicauhinh from "./components/quanlicauhinh";
-import Quanlimay from "./components/quanlimay";
-import Quanliphongmay from "./components/quanliphongmay";
-import Quanlitaikhoan from "./components/quanlitaikhoan";
-import Quanlithietbi from "./components/quanlithietbi";
-import Admin from "./router/admin";
-import Login from "./login";
+import React from 'react';
+import {Routes} from 'react-router-dom';
+import QuanLyPhongMay from './pages/quan-ly-phong-may';
+
 function App() {
   return (
-    <div className="App"> <Login/>
+    <div className='App'>
+      <QuanLyPhongMay />
       <Routes>
         {/* <Route path="/" element={<Login />}/> 
         <Route path="/admin" element={<Admin />} />
@@ -20,8 +15,6 @@ function App() {
         <Route path="/quanlithietbi" element={<Quanlithietbi />} />
         <Route path="/quanliphongmay" element={<Quanliphongmay />} />
         <Route path="/lichsusuadoi" element={<Lichsusuadoi />} />*/}
-       
-
       </Routes>
     </div>
   );
