@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './login.css';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import LockIcon from '@mui/icons-material/Lock';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -24,8 +26,8 @@ function Login() {
   }
   return (
     <div className='content'>
-      <h1>Quản Lí Phòng Máy Tính</h1>
-      <div className='content-form'>
+      <h1 className='font-bold '>Quản Lí Phòng Máy Tính</h1>
+      <div className='content-form !mt-10'>
         <form onSubmit={handleSubmit} className='content-form1'>
           <div className='content-form-login'>
             <label htmlFor='text'>Tên Đăng Nhập</label>
@@ -34,7 +36,8 @@ function Login() {
               placeholder='username'
               className='form-control'
               onChange={(e) => setUsername(e.target.value)}
-            />
+              
+            /><PersonOutlineIcon className='user !text-[#fff] !w-9 !h-9 mt-1'/>
           </div>
           <div className='content-form-login'>
             <label htmlFor='password'>Mật Khẩu</label>
@@ -43,13 +46,14 @@ function Login() {
               placeholder='password'
               className='form-control'
               onChange={(e) => setPassword(e.target.value)}
-            />
+            /><LockIcon className='user !text-[#fff] !w-7 !h-7 mt-2'/>
           </div>
           <button className='login'>Login</button>
-          <p>
-            Don't have account?<a href='#'>Sign Up</a>
-          </p>
+          
         </form>
+          <p className='mt-10 text-center text-[#fff] size-.5'>
+            Don't have account?<a  href='#'>Sign Up</a>
+          </p>
       </div>
     </div>
   );

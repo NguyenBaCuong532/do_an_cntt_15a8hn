@@ -1,11 +1,13 @@
 import React from 'react';
 import {Routes} from 'react-router-dom';
 import QuanLyPhongMay from './pages/quan-ly-phong-may';
+import Login from './pages/login';
+
 
 function App() {
   return (
     <div className='App'>
-      <QuanLyPhongMay />
+      <Login />
       <Routes>
         {/* <Route path="/" element={<Login />}/> 
         <Route path="/admin" element={<Admin />} />
