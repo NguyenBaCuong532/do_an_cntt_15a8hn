@@ -1,10 +1,10 @@
-body {
-}
+
+
 .side-nav h2 {
-  font-size: 40px;
+  font-size: 30px;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
-  padding: 50px;
+  padding: 15px;
   border-bottom: 3px solid #0951ae;
 }
 li {
@@ -20,13 +20,13 @@ li:hover {
   background: linear-gradient(35deg, #4752a9, #6cc1db);
   cursor: pointer;
 }
-a:hover {
+.side-nav a:hover {
   color: #fff;
   font-weight: 500;
 }
 nav {
   width: max-content;
-  min-width: 360px;
+  min-width: 300px;
   height: 100vh;
   border-right: 5px solid #351663;
   border-top: 2px solid #090909;
@@ -35,14 +35,11 @@ nav ul {
   padding-top: 20px;
   list-style: none;
 }
-a {
-  font-size: 25px;
+.side-nav a {
+  font-size: 20px;
   text-decoration: none;
   padding: 10px;
   color: #fff;
-}
-div {
-  position: relative;
 }
 
 .admin-container {

@@ -1,12 +1,12 @@
 import React from "react";
-import "./quanlitaikhoan.css";
-import AdminLayout from "./layout/adminlayout";
+import "./index.css"
+import AdminLayout from "../../components/layout/adminlayout";
 
 function quanlitaikhoan() {
   return (
     <AdminLayout>
-      <div className="bangdiekhien">
-        <h3>Danh Sách Phòng Máy</h3>
+      <div className="bangdiekhien flex">
+        <h3 >Quản Lý Tài Khoản</h3>
         <div className="form">
           <div className="timkiem">
             <div>

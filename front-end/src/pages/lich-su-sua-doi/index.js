@@ -1,6 +1,6 @@
 import React from "react";
-import AdminLayout from "./layout/adminlayout";
-function Quanlimonhoc() {
+import AdminLayout from "../../components/layout/adminlayout";
+function Lichsusuadoi() {
   return (
     <div >
       <AdminLayout>
@@ -11,4 +11,4 @@ function Quanlimonhoc() {
   )
 }
 
-export default Quanlimonhoc;
+export default Lichsusuadoi;

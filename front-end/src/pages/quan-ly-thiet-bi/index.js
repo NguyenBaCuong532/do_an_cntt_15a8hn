@@ -1,6 +1,6 @@
 import React from "react";
-import AdminLayout from "./layout/adminlayout";
-function quanlimay() {
+import AdminLayout from "../../components/layout/adminlayout";
+function Quanlithietbi() {
   return (
     <div >
       <AdminLayout>
@@ -11,4 +11,4 @@ function quanlimay() {
   )
 }
 
-export default quanlimay;
+export default Quanlithietbi;

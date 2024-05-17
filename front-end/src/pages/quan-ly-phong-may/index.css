@@ -1,5 +1,5 @@
 .table-search {
-  /* background: #f6f4f4; */
+ 
   padding: 10px 30px;
   border: 2px solid #888;
 }
@@ -8,7 +8,7 @@
   width: 100%;
   height: 260px;
   font-size: 30px;
-  /* background: #f3efef; */
+ 
   flex: 1;
 }
 .table-search_1 button {
@@ -20,19 +20,17 @@
   cursor: pointer;
   background: #a73e3e;
 }
-th,
-td {
+.table-search table th,.table-search table,
+.table-search td {
   padding-top: 10px;
   padding-bottom: 20px;
   padding-left: 30px;
   padding-right: 40px;
 }
-tr {
+.table-search tr {
   border-bottom: 2px solid #ddd;
 }
-table,
-th,
-td {
+.table-search_1 table,.table-search_1 table th,.table-search_1 table td {
   border: 1px solid black;
   border-collapse: collapse;
 }
