@@ -10,8 +10,8 @@ import FindReplaceIcon from '@mui/icons-material/FindReplace';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 function AdminLayout(props) {
   return (
-    <div className="admin-container">
-      <nav className="side-nav bg-[#0E131F]" >
+    <div className="admin-container ">
+      <nav className="side-nav bg-[#0E131F] fixed" >
         <h2 className="text-white font-bold"><SupervisorAccountIcon className="!text-[#11f505] !w-20 !h-20 mr-4 mb-5" />ADMIN</h2>
         <ul>
           <li>
@@ -41,7 +41,7 @@ function AdminLayout(props) {
           </li>
         </ul>
       </nav>
-      <main>{props.children}</main>
+      <main className=" pl-[270px]">{props.children}</main>
     </div>
   );
 }
