@@ -1,102 +1,102 @@
 .infor-tb {
-    width: 100%;
-    margin-right: 20px;
-    border: 2px solid #ccc;
-    padding: 30px 200px 30px 20px;
-  
-  }
-  
-  .infor-tb input {
-    width: 350px;
-    margin: 10px 0;
-    outline: none;
-    padding: 5px 10px;
-    background: transparent;
-    border: 2px solid #ccc;
-   
-  
-  }
-  
-  .infor-tb input:focus {
-    transition: 0.5s;
-    box-shadow: 0 0 10px 0 rgb(234, 238, 238);
-    color: #000;
-    background: transparent;
-    border: none;
-    outline: none;
-    padding-left: 20px;
-  }
-  
-  .infor-tb label {
-    font-size: 20px;
-    font-weight: 500;
-  }
-  
-  .infor-tb .text-tarea {
-    background: transparent;
-    height: 200px;
-    width: 800px;
-    border: 2px solid #ccc;
-    outline: none;
-  
-  }
-  
-  .text-tarea:focus {
-    transition: 0.5s;
-    box-shadow: 0 0 10px 0 rgb(234, 238, 238);
-  
-    color: #000;
-    background: transparent;
-    border: none;
-    outline: none;
-    padding-left: 20px;
-  }
-  
+  width: 100%;
+  margin-right: 20px;
+  border: 2px solid #ccc;
+  padding: 30px 200px 30px 20px;
+
+}
+
+.infor-tb input {
+  width: 350px;
+  margin: 10px 0;
+  outline: none;
+  padding: 5px 10px;
+  background: transparent;
+  border: 2px solid #ccc;
+
+
+}
+
+.infor-tb input:focus {
+  transition: 0.5s;
+  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+}
+
+.infor-tb label {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.infor-tb .text-tarea {
+  background: transparent;
+  height: 200px;
+  width: 800px;
+  border: 2px solid #ccc;
+  outline: none;
+
+}
+
+.text-tarea:focus {
+  transition: 0.5s;
+  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
+
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+}
+
 .infor-tb1 {
-    width:100%;
-    height: 260px;
-    border: 2px solid #ccc;
-  }
-  .infor-tb1 h2 {
-    padding: 10px 20px;
-    font-size: 20px;
-    border-bottom: 1px solid #e6dbdb;
-    font-weight: 600;
-    color: #0520a4;
-  }
-  
-  .infor-tb1 button {
-    padding: 10px 20px;
-    margin: 20px 10px;
-    border-radius: 10px;
-    width: 170px;
-  
-  
-  }
-  
-  .infor-tb1 .luu {
-    background: linear-gradient(35deg, #21bb95, #07e312);
-    font-weight: 500;
-  }
-  
-  .infor-tb1 .luu:hover {
-    background: linear-gradient(35deg, #0be7b0, #0a31df);
-    color: #fff;
-    font-family: 700;
-  
-  }
-  
-  .infor-tb1 .reset {
-    background: linear-gradient(35deg, #e11b1b, #d50c8f);
-  
-    font-weight: 500;
-  }
-  
-  .infor-tb1 .reset:hover {
-    color: #fff;
-    font-family: 700;
-    background: linear-gradient(35deg, #e70808, #e206f6);
-  
-  
-  }
-  
+  width: 100%;
+  height: 260px;
+  border: 2px solid #ccc;
+}
+
+.infor-tb1 h2 {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-bottom: 1px solid #e6dbdb;
+  font-weight: 600;
+  color: #0520a4;
+}
+
+.infor-tb1 button {
+  padding: 10px 20px;
+  margin: 20px 10px;
+  border-radius: 10px;
+  width: 170px;
+
+
+}
+
+.infor-tb1 .luu {
+  background: linear-gradient(35deg, #21bb95, #07e312);
+  font-weight: 500;
+}
+
+.infor-tb1 .luu:hover {
+  background: linear-gradient(35deg, #0be7b0, #0a31df);
+  color: #fff;
+  font-family: 700;
+
+}
+
+.infor-tb1 .reset {
+  background: linear-gradient(35deg, #e11b1b, #d50c8f);
+
+  font-weight: 500;
+}
+
+.infor-tb1 .reset:hover {
+  color: #fff;
+  font-family: 700;
+  background: linear-gradient(35deg, #e70808, #e206f6);
+
+
+}

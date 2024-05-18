@@ -1,87 +1,78 @@
 .table-searchls {
-    border-radius: 10px;
-     padding: 0px 30px;
-     border: 2px solid #888;
-     margin: 28px 20px;
-     background: linear-gradient(35deg, #8290a2, #98a8b9);
-   
-   }
-   .table-searchls .searchls-nhap{
-    width: 400px;
-    padding: 7px 20px;
-    border-radius: 10px;
-    outline: none;
-    background: transparent;
-    border: 2px solid #cbcaca;
-  
-    
-    
-  }
-  .table-searchls .search-check{
-    width: 40px;
-    height: 18px;
-    border: none;
-    
-
-  }
-  .table-searchls label{
-    color: #000;
-    font-weight: 500;
+  border-radius: 10px;
+  padding: 0px 30px;
+  border: 2px solid #888;
+  margin: 28px 20px;
+  background: linear-gradient(35deg, #8290a2, #98a8b9);
 }
 
-  .table-searchls .searchls-nhap:focus{
-    transition: 0.5s;
-    box-shadow: 0 0 10px 0 rgb(234, 238, 238);
-    color: #000;
-    background: transparent;
-    border: none;
-    outline: none;
-    padding-left: 30px;
-    color: #000;
-    font-weight: 500;
-  
-  }
+.table-searchls .searchls-nhap {
+  width: 400px;
+  padding: 7px 20px;
+  border-radius: 10px;
+  outline: none;
+  background: transparent;
+  border: 2px solid #cbcaca;
+}
 
-  .table-searchls .searchls-nhap::placeholder{
-    color: #000;
-    font-weight: 500;
-  }
-  
-  .table-searchls.select::after{
+.table-searchls .search-check {
+  width: 40px;
+  height: 18px;
+  border: none;
+}
+
+.table-searchls label {
+  color: #000;
+  font-weight: 500;
+}
+
+.table-searchls .searchls-nhap:focus {
+  transition: 0.5s;
+  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 30px;
+  color: #000;
+  font-weight: 500;
+}
+
+.table-searchls .searchls-nhap::placeholder {
+  color: #000;
+  font-weight: 500;
+}
+
+.table-searchls.select::after {
   cursor: pointer;
   background: transparent;
-  }
-  
-  .table-searchls button {
-    padding: 10px 20px;
-    margin: 20px 30px;
-    border-radius: 10px;
-  
-  
-  }
-  
-  .table-searchls .luu {
-    background: linear-gradient(35deg, #21bb95, #07e312);
-    font-weight: 500;
-  }
-  
-  .table-searchls .luu:hover {
-    background: linear-gradient(35deg, #0be7b0, #0a31df);
-    color: #fff;
-    font-family: 700;
-  
-  }
-  
-  .table-searchls .reset {
-    background: linear-gradient(35deg, #e11b1b, #d50c8f);
-  
-    font-weight: 500;
-  }
-  
-  .table-searchls .reset:hover {
-    color: #fff;
-    font-family: 700;
-    background: linear-gradient(35deg, #e70808, #e206f6);
-  
-  
-  }
+}
+
+.table-searchls button {
+  padding: 10px 20px;
+  margin: 20px 30px;
+  border-radius: 10px;
+}
+
+.table-searchls .luu {
+  background: linear-gradient(35deg, #21bb95, #07e312);
+  font-weight: 500;
+}
+
+.table-searchls .luu:hover {
+  background: linear-gradient(35deg, #0be7b0, #0a31df);
+  color: #fff;
+  font-family: 700;
+}
+
+.table-searchls .reset {
+  background: linear-gradient(35deg, #e11b1b, #d50c8f);
+
+  font-weight: 500;
+}
+
+.table-searchls .reset:hover {
+  color: #fff;
+  font-family: 700;
+  background: linear-gradient(35deg, #e70808, #e206f6);
+}

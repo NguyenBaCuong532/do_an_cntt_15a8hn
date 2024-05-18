@@ -33,7 +33,7 @@
      width: 900px;
      height: 200px;
      border: 2px solid #595555;
-    
+
      left: 10px;
      padding-top: 20px;
 
@@ -70,15 +70,6 @@
      border: none;
 
  }
-
- .tim1 {
-
- }
-
- .tim2 {
-
- }
-
  .tim1:hover,
  .tim2:hover {
      opacity: 0.7;

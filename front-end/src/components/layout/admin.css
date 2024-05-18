@@ -1,5 +1,5 @@
-.admin-container{
-  background: linear-gradient(35deg,#a1c3e8,#9a9ea2);
+.admin-container {
+  background: linear-gradient(35deg, #a1c3e8, #9a9ea2);
 
 }
 
@@ -10,6 +10,7 @@
   padding: 15px;
   border-bottom: 3px solid #0951ae;
 }
+
 li {
   margin: 15px 10px;
   padding: 10px;
@@ -23,10 +24,12 @@ li:hover {
   background: linear-gradient(35deg, #4752a9, #6cc1db);
   cursor: pointer;
 }
+
 .side-nav a:hover {
   color: #fff;
   font-weight: 500;
 }
+
 nav {
   width: max-content;
   min-width: 300px;
@@ -34,10 +37,12 @@ nav {
   border-right: 5px solid #351663;
   border-top: 2px solid #090909;
 }
+
 nav ul {
   padding-top: 20px;
   list-style: none;
 }
+
 .side-nav a {
   font-size: 20px;
   text-decoration: none;
@@ -50,6 +55,7 @@ nav ul {
   flex-direction: row;
   flex: 1;
 }
+
 main {
   width: 100%;
 }
