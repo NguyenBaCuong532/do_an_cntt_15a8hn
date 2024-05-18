@@ -9,8 +9,7 @@ function Quanlicauhinh() {
     <div>
       <AdminLayout>
         <div className="container">
-
-        <h3 className=" text">Quản Lý Cấu Hình</h3>
+        <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem]">Quản Lý Cấu Hình</h3>
         <div className="table-cauhinh">
           <button className="form-tao">
             {" "}

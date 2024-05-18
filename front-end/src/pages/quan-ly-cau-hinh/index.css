@@ -1,23 +1,9 @@
-.container{
-  height: 100vh;
-  background: linear-gradient(35deg,#a1c3e8,#9a9ea2);
-  
-}
-
-h3 {
-  font-size: 50px;
-  margin-left: 60px;
-  padding-top: 30px;
-}
-
 .table-cauhinh table,
 .table-cauhinh table td {
   padding-top: 10px;
   padding-bottom: 20px;
   padding-left: 60px;
-  padding-right: 60px;
-
-
+  padding-right: 40px;
 }
 
 .table-cauhinh table th {
@@ -28,75 +14,79 @@ h3 {
 }
 
 .form-cauhinh {
-  width: 100%;
+  width: 1550px;
   height: 700px;
-  background: linear-gradient(35deg,#8290a2,#98a8b9);
-
+  background: linear-gradient(35deg, #8290a2, #98a8b9);
   display: flex;
   padding: 20px 30px;
   border-radius: 10px;
-  margin-top: 40px;
+  margin: 30px;
 
 
 }
 
-.infor1 {
-  width: 620px;
-  border: 2px solid #ccc;
-}
+
 
 .infor {
   width: 100%;
   margin-right: 20px;
   border: 2px solid #ccc;
-  padding: 30px 50px;
+  padding: 30px 30px;
 
 }
-.infor input{
+
+.infor input {
   width: 800px;
-  margin:10px 0;
+  margin: 10px 0;
   outline: none;
   padding: 5px 10px;
   background: transparent;
   border: 2px solid #ccc;
 
 }
-.infor input:focus{
-  transition:0.5s;
-      box-shadow: 0 0 10px 0 rgb(234, 238, 238);
-    color: #000;
-    background: transparent;
-    border: none;
-    outline: none;
-    padding-left: 20px;
-}
-.infor label{
-font-size: 20px;
-font-weight: 500;
-}
-.text-tarea{
+
+.infor input:focus {
+  transition: 0.5s;
+  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
+  color: #000;
   background: transparent;
-height: 300px;
-width: 800px;
-border: 2px solid #ccc;
-outline: none;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+}
+
+.infor label {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.text-tarea {
+  background: transparent;
+  height: 300px;
+  width: 800px;
+  border: 2px solid #ccc;
+  outline: none;
 
 }
-.text-tarea:focus{
-  transition:0.5s;
+
+.text-tarea:focus {
+  transition: 0.5s;
   box-shadow: 0 0 10px 0 rgb(234, 238, 238);
 
-   color: #000;
-   background: transparent;
-   border: none;
-   outline: none;
-   padding-left: 20px;
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 20px;
 }
+
 .table-cauhinh {
-    background: linear-gradient(35deg,#8290a2,#98a8b9);
-  margin: 10px 10px;
-  padding: 30px 20px;
+  background: linear-gradient(35deg, #8290a2, #98a8b9);
+  margin: 30px 20px;
+  padding: 30px 30px;
   border-radius: 10px;
+  border: 2px solid #cbcaca;
+
 }
 
 .table-cauhinh table td,
@@ -124,63 +114,76 @@ outline: none;
   font-weight: 700;
 
 }
-.infor1 h2{
+
+.infor1 {
+  width: 620px;
+  border: 2px solid #ccc;
+}
+.infor1 h2 {
   padding: 10px 20px;
   font-size: 20px;
   border-bottom: 1px solid #e6dbdb;
   font-weight: 600;
   color: #0520a4;
 }
-.infor1 button{
+
+.infor1 button {
   padding: 10px 20px;
   margin: 20px 30px;
   border-radius: 10px;
- 
-  
+
+
 }
-.infor1 .luu{
-  background: linear-gradient(35deg,#21bb95,#07e312);
+
+.infor1 .luu {
+  background: linear-gradient(35deg, #21bb95, #07e312);
   font-weight: 500;
 }
-.infor1 .luu:hover{
-  background: linear-gradient(35deg,#0be7b0,#0a31df);
+
+.infor1 .luu:hover {
+  background: linear-gradient(35deg, #0be7b0, #0a31df);
   color: #fff;
   font-family: 700;
 
 }
-.infor1 .reset{
-  background: linear-gradient(35deg,#e11b1b,#d50c8f);
+
+.infor1 .reset {
+  background: linear-gradient(35deg, #e11b1b, #d50c8f);
 
   font-weight: 500;
 }
-.infor1 .reset:hover{
+
+.infor1 .reset:hover {
   color: #fff;
   font-family: 700;
-  background: linear-gradient(35deg,#e70808,#e206f6);
+  background: linear-gradient(35deg, #e70808, #e206f6);
 
 
 }
-.infor1 label{
+
+.infor1 label {
   margin: 20px;
   font-size: 20px;
-font-weight: 500;
+  font-weight: 500;
 
 }
-.infor1 input{
+
+.infor1 input {
   width: 350px;
-  margin:10px 20px;
+  margin: 10px 20px;
   outline: none;
   padding: 5px 10px;
   background: transparent;
   border: 2px solid #ccc;
 
 }
-.infor1 input:focus{
-  transition:0.5s;
-   box-shadow: 0 0 10px 0 rgb(234, 238, 238);
-    color: #000;
-    background: transparent;
-    border: none;
-    outline: none;
-    padding-left: 20px;
+
+.infor1 input:focus {
+  transition: 0.5s;
+  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 20px;
 }

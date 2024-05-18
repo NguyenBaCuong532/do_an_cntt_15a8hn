@@ -16,24 +16,24 @@ function AdminLayout(props) {
         <ul>
           <li>
             <PersonIcon className="!text-[#fff] !w-10 !h-10"/>
-            <Link to="/quanlitaikhoan">Quản Lí Tài Khoản</Link>
+            <Link to="/quanlitaikhoan">Quản Lý Tài Khoản</Link>
           </li>
           <li>
             <ComputerIcon className="!text-[#fff] !w-10 !h-10"/>
-           <Link to="/quanliphongmay">Quản Lí Phòng Máy</Link>
+           <Link to="/quanliphongmay">Quản Lý Phòng Máy</Link>
           </li>
           <li>
             <DeveloperBoardIcon className="!text-[#fff] !w-10 !h-10"/>
-             <Link to="/quanlithietbi">Quản Lí Thiết Bị</Link>
+             <Link to="/quanlithietbi">Quản Lý Thiết Bị</Link>
           </li>
 
           <li>
             <AdbIcon className="!text-[#fff] !w-10 !h-10"/>
-            <Link to="/quanlicauhinh">Quản Lí Cấu Hình</Link>
+            <Link to="/quanlicauhinh">Quản Lý Cấu Hình</Link>
           </li>
           <li>
             <ImportantDevicesIcon className="!text-[#fff] !w-10 !h-10"/>
-            <Link to="/quanlimay">Quản Lí Máy</Link>
+            <Link to="/quanlimay">Quản Lý Máy</Link>
           </li>
           <li>
             <FindReplaceIcon className="!text-[#fff] !w-10 !h-10"/>

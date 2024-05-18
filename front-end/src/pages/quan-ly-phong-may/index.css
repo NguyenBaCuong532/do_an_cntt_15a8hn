@@ -1,9 +1,100 @@
 .table-search {
- 
-  padding: 10px 30px;
+ border-radius: 10px;
+  padding: 0px 30px;
   border: 2px solid #888;
+  margin: 28px 20px;
+  background: linear-gradient(35deg, #8290a2, #98a8b9);
+
+}
+.form-search{
+  border-bottom: 2px solid #cbcaca;
+  color: #0923e8;
+  
+}
+.table-search input,.table-search select{
+  width: 400px;
+  padding: 7px 20px;
+  border-radius: 10px;
+  outline: none;
+  background: transparent;
+  border: 2px solid #cbcaca;
+
+  
+  
+}
+.table-search input:focus{
+  transition: 0.5s;
+  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 30px;
+  color: #000;
+  font-weight: 500;
+
+}
+.table-search select:hover,.infor1 select:hover{
+
+  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 30px;
+  color: #000;
+  font-weight: 500;
+}
+.table-search input::placeholder{
+  color: #000;
+  font-weight: 500;
+}
+.table-search select,.infor1 select{
+  outline: none;
+  border: 2px solid #cbcaca;
+  margin-left: -1px;
+  color: #000;
+  font-weight: 500;
+  background: none;
+}
+.table-search .select::after{
+cursor: pointer;
+background: transparent;
 }
 
+.table-search button {
+  padding: 10px 20px;
+  margin: 20px 30px;
+  border-radius: 10px;
+
+
+}
+
+.table-search .luu {
+  background: linear-gradient(35deg, #21bb95, #07e312);
+  font-weight: 500;
+}
+
+.table-search .luu:hover {
+  background: linear-gradient(35deg, #0be7b0, #0a31df);
+  color: #fff;
+  font-family: 700;
+
+}
+
+.table-search .reset {
+  background: linear-gradient(35deg, #e11b1b, #d50c8f);
+
+  font-weight: 500;
+}
+
+.table-search .reset:hover {
+  color: #fff;
+  font-family: 700;
+  background: linear-gradient(35deg, #e70808, #e206f6);
+
+
+}
 .table-search_1 {
   width: 100%;
   height: 260px;
@@ -11,6 +102,7 @@
  
   flex: 1;
 }
+
 .table-search_1 button {
   font-size: 25px;
   padding: 5px 10px;
@@ -20,22 +112,22 @@
   cursor: pointer;
   background: #a73e3e;
 }
-.table-search table th,.table-search table,
-.table-search td {
-  padding-top: 10px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  padding-right: 40px;
+.infor1 h3 {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-top: 1px solid #e6dbdb;
+  font-weight: 600;
+  color: #0520a4;
 }
-.table-search tr {
-  border-bottom: 2px solid #ddd;
-}
-.table-search_1 table,.table-search_1 table th,.table-search_1 table td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-.qlpm-container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+.infor1 select{
+  width: 340px;
+  padding: 7px 30px;
+  border-radius: 10px;
+  outline: none;
+  background: transparent;
+  border: 2px solid #cbcaca;
+  margin-left: 40px;
+
+  
+  
 }

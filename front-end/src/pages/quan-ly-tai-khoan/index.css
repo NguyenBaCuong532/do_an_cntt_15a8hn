@@ -2,7 +2,6 @@
      font-size: 30px;
 
      margin-top: 10px;
-     margin-left: 250px;
  }
 
  h4 {
@@ -11,11 +10,7 @@
 
  }
 
- body {
-     background: linear-gradient(35deg, #d8dcd8, #aaadab);
-     
 
- }
 
  .search-form {
      margin-top: -70px;
@@ -24,11 +19,11 @@
 
  .bangdiekhien .form {
      background: linear-gradient(35deg, #c9d8eb, #feffff);
-     width: 100%;
+     width: 400px;
      height: 500px;
      border: 2px solid #535151;
 
-     padding: 30px 500px;
+     padding: 30px 10px;
      margin-top: 80px;
 
 
@@ -77,12 +72,10 @@
  }
 
  .tim1 {
-     background: linear-gradient(35deg, #0ee61c, #1bac55);
 
  }
 
  .tim2 {
-     background: linear-gradient(35deg, #f44201, #e9054d);
 
  }
 

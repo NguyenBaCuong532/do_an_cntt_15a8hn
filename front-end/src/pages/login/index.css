@@ -29,9 +29,9 @@ h1{
 .content-form{
     width: 450px;
     height: 500px;
-    background-color: transparent;
+    background-color: transparent; margin: auto;
     box-shadow: 0 0 20px 0 rgba(243, 235, 235, 0.6);
-    margin: auto;
+   
     backdrop-filter: blur(3px);
     border-radius: 15px;
 }
