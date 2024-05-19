@@ -41,7 +41,7 @@ function AdminLayout(props) {
           </li>
         </ul>
       </nav>
-      <main className=" pl-[270px]">{props.children}</main>
+      <main className=" pl-[270px] min-h-[100vh]">{props.children}</main>
     </div>
   );
 }

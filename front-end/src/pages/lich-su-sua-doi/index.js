@@ -1,16 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import AdminLayout from "../../components/layout/adminlayout";
 import "./index.css";
+import { Lichsu } from "./lichsu";
+import axios from "axios";
 
 const Lichsusuadoi = () => {
+    const [tenmay, setTenmay] = useState('');
+    const [tenmaycn, setTenmaycn] = useState('');
+    const [cauhinh, setCauhinh] = useState('');
+    const [ngay, setNgay] = useState('');
+    const [ghichu, setGhichu] = useState('');
+
+    const [data, setData] = useState([]);
+  
+    function handleSubmit(event) {
+      event.preventDefault();
+      axios
+        .get('http://localhost:4000/lichsutk', { params: { tenmay, tenmaycn,cauhinh,ngay,ghichu } })
+        .then((res) => setData(res.data))
+        .catch((err) => console.log(err));
+    }
+    useEffect(() => {
+      axios
+        .get('http://localhost:4000/lichsutk')
+        .then((res) => setData(res.data))
+        .catch((err) => console.log(err));
+    }, []);
   return (
     <AdminLayout>
       <div className="lssd-container ">
         <p className="text-center font-bold text-[2.75rem] py-[1.25rem]">
           Lịch Sử Sửa Đổi
         </p>
-        <div className="table-searchls flex flex-col gap-2">
+        <form className="table-searchls flex flex-col gap-2" onSubmit={handleSubmit}>
           <h2 className="form-searchls font-bold text-[1.35rem] py-[1.25rem]">
             Tìm Kiếm
           </h2>
@@ -21,6 +44,7 @@ const Lichsusuadoi = () => {
                   className="searchls-nhap"
                   type="text"
                   placeholder="Nhập Từ Khóa"
+                  
                 />
               </td>
               <td>
@@ -60,7 +84,7 @@ const Lichsusuadoi = () => {
               </td>
             </tr>
           </table>
-        </div>
+        </form>
         <div className="table-cauhinh">
           <table>
             <tr>
@@ -71,14 +95,10 @@ const Lichsusuadoi = () => {
               <th>Ngày</th>
               <th>Ghi Chú</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td>1</td>
-              <td></td>
-            </tr>
+           {/* <Lichsu/> */}
+           {data.map((lichsu, index) => {
+            return <Lichsu key={index} lichsu={lichsu} />;
+          })}
           </table>
         </div>
       </div>

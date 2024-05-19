@@ -1,12 +1,12 @@
-const express = require('express');
-const database = require('../../database');
+const express = require("express");
+const database = require("../../database");
 const router = express.Router();
 
-router.get('/', function (request, response) {
+router.get("/", function (request, response) {
   const query = request.query;
   let email = query.email;
   let name = query.name;
-  let sql = 'SELECT * FROM user';
+  let sql = "SELECT * FROM user";
   const whereSql = [];
   if (email) {
     whereSql.push(`user.email LIKE '%${email}%'`);
@@ -16,9 +16,9 @@ router.get('/', function (request, response) {
   }
 
   if (whereSql.length > 0) {
-    sql += ' WHERE ' + whereSql.join(' AND ') + 'and user.permision = 1';
+    sql += " WHERE " + whereSql.join(" AND ") + "and user.permision = 1";
   } else {
-    sql += ' where user.permision = 1';
+    sql += " where user.permision = 1";
   }
 
   database.query(sql, [], function (error, results) {
@@ -34,4 +34,31 @@ router.get('/', function (request, response) {
   });
 });
 
+router.patch("/:id", function (request, response) {
+  const id = request.params.id;
+  let mamay = request.body.mamay;
+  let tenmay = request.body.tenmay;
+  database.query(
+    `UPDATE quan_ly_may SET ma_may = "${mamay}", ten_may = "${tenmay}" WHERE id =${id}`,
+    [],
+    function (error, result) {
+      if (error) throw error;
+      response.send("SUCCESS");
+      response.end();
+    }
+  );
+});
+router.get("/:id", function (request, response) {
+  const id = request.params.id;
+  database.query(
+    `select * from quan_ly_may where id =${id}`,
+    [],
+    function (error, result) {
+      if (error) throw error;
+      if(result.length>0)
+      response.send(result[0]);
+    
+    }
+  );
+});
 module.exports = router;

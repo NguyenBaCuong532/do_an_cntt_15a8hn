@@ -99,3 +99,76 @@
 
 
  }
+ .table-user button {
+    padding: 10px 20px;
+    margin: 20px 30px;
+    border-radius: 10px;
+  
+  
+  }
+  
+  .table-user .luu {
+    background: linear-gradient(35deg, #21bb95, #07e312);
+    font-weight: 500;
+  }
+  
+  .table-user .luu:hover {
+    background: linear-gradient(35deg, #0be7b0, #0a31df);
+    color: #fff;
+    font-family: 700;
+  
+  }
+  
+  .table-user .reset {
+    background: linear-gradient(35deg, #e11b1b, #d50c8f);
+  
+    font-weight: 500;
+  }
+  
+  .table-user .reset:hover {
+    color: #fff;
+    font-family: 700;
+    background: linear-gradient(35deg, #e70808, #e206f6);
+  
+  
+  }
+  
+  .table-user input::placeholder {
+    color: #000;
+    font-weight: 500;
+  }
+  .table-user {
+    border-radius: 10px;
+    padding: 0px 30px;
+    border: 2px solid #888;
+    margin: 28px 60px;
+    background: linear-gradient(35deg, #8290a2, #98a8b9);
+  
+  }
+  
+  
+  
+  .table-user .user-ht{
+    width: 300px;
+    padding: 7px 20px;
+    border-radius: 10px;
+    outline: none;
+    background: transparent;
+    border: 2px solid #cbcaca;
+  
+  
+  
+  }
+  .table-user .user-ht:focus {
+    transition: 0.5s;
+    box-shadow: 0 0 10px 0 rgb(234, 238, 238);
+    color: #000;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-left: 30px;
+    color: #000;
+    font-weight: 500;
+    width: 350px;
+  
+  }

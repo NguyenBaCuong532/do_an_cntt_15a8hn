@@ -1,6 +1,7 @@
 import SearchIcon from '@mui/icons-material/Search';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AdminLayout from '../../components/layout/adminlayout';
 import './index.css';
 import { User } from './user';
@@ -17,6 +18,12 @@ const QuanLyTaiKhoan = () => {
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }
+  useEffect(() => {
+    axios
+      .get('http://localhost:4000/user')
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <AdminLayout>
       <div className="qlpm-container ">
@@ -24,7 +31,7 @@ const QuanLyTaiKhoan = () => {
           Quản Lý Tài Khoản
         </p>
         <form
-          className="table-search flex flex-col gap-2"
+          className="table-user flex flex-col gap-2"
           onSubmit={handleSubmit}
         >
           <h2 className="form-search font-bold text-[1.35rem] py-[1.25rem]">
@@ -33,14 +40,14 @@ const QuanLyTaiKhoan = () => {
           <table>
             <tr>
               <td>
-                <input
+                <input className='user-ht'
                   type="text"
                   placeholder="Tìm Kiếm Theo Họ Tên"
                   onChange={(e) => setName(e.target.value)}
                 />
               </td>
               <td>
-                <input
+                <input className='user-ht mr-80'
                   type="text"
                   placeholder="Tìm Kiếm Theo Email"
                   onChange={(e) => setEmail(e.target.value)}
@@ -53,18 +60,23 @@ const QuanLyTaiKhoan = () => {
                   <button className="luu">
                     <SearchIcon className=" mr-1" />
                     Tìm Kiếm
+                  </button >
+                  <button className="reset">
+                  <RestartAltIcon/><input type="reset" className='rs'
+                  
+                  ></input>
                   </button>
-                  <input type="reset" className="reset"></input>
+                  
                 </div>
               </td>
             </tr>
           </table>
         </form>
-        <div className="table-cauhinh flex flex-row gap-6 flex-wrap" >
+        <div className="table-cauhinh flex flex-row gap-6 flex-wrap">
           {/* <User />
           <User /> */}
-          {data.map((user,index)=>{
-              return <User key={index} user={user}/>
+          {data.map((user, index) => {
+            return <User key={index} user={user} />;
           })}
         </div>
       </div>

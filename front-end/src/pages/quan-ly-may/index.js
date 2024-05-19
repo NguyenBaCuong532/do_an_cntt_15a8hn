@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import AdminLayout from "../../components/layout/adminlayout";
 import "./index.css";
@@ -8,7 +8,28 @@ import BorderColorIcon from "@mui/icons-material/BorderColor";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ComputerIcon from "@mui/icons-material/Computer";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import { May } from "./may";
+import axios from "axios";
+
 const QuanLyMay = () => {
+  const [mamay, setMamay] = useState('');
+  const [tenmay, setTenmay] = useState('');
+  const [data, setData] = useState([]);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    axios
+      .get('http://localhost:4000/qlmay', { params: { mamay, tenmay } })
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }
+  useEffect(() => {
+    axios
+      .get('http://localhost:4000/qlmay')
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+  console.log(data);
   return (
     <AdminLayout>
       <div className="qlpm-container ">
@@ -22,28 +43,14 @@ const QuanLyMay = () => {
           <table>
             <tr>
               <td>
-                <label>Mã Phòng :</label>
+                <label>Mã Máy :</label>
               </td>
               <td>
-                <label>Khu Vực :</label>
+                <label>Tên Máy :</label>
               </td>
             </tr>
-            <tr>
-              <td>
-                <label>Tên Phòng :</label>
-              </td>
-              <td>
-                <label>Trạng Thái :</label>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label>Loại Phòng :</label>
-              </td>
-              <td>
-                <label>Ngày Tạo :</label>
-              </td>
-            </tr>
+            
+           
           </table>
         </div>
         <div className="table-cauhinh">
@@ -53,23 +60,14 @@ const QuanLyMay = () => {
               Tạo Mới
             </Link>
           </button>
-          <div className="infor-tb">
-            <table>
-              <tr>
-                <button
-                  className="bg-gradient-to-r from-green-400 to-green-600 text-[#ffffff] 
-               !w-60 !h-40 mt-6 rounded-lg 
-               "
-                >
-                  <ComputerIcon className=" !w-20 !h-20 " />
-                  <p className=" font-bold">Máy 02</p>
-                  <BorderColorIcon className=" bg-gradient-to-r from-yellow-500 to-yellow-700 !w-8 !h-8 py-1 rounded-lg" />
-                  <DeleteForeverIcon className=" ml-5 bg-gradient-to-r from-red-700 to-red-500 rounded-lg !w-8 !h-8 py-1" />
-                  <VisibilityIcon className=" ml-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg !w-8 !h-8 py-1" />
-                </button>
-              </tr>
-              <tr></tr>
-            </table>
+          <div className="infor-tb flex flex-row gap-6 flex-wrap">
+            
+              {data.map((cpt, index) => {
+            return <May key={index} cpt={cpt} />;
+          })}
+             
+             
+           
           </div>
         </div>
       </div>

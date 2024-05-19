@@ -1,22 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import axios from "axios";
 import { Link } from "react-router-dom";
 import AdminLayout from "../../components/layout/adminlayout";
 import "./index.css";
+import { Thietbi } from "./thietbi";
 import AddIcon from "@mui/icons-material/Add";
-import BorderColorIcon from "@mui/icons-material/BorderColor";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-function Quanlithietbi() {
+
+
+function Quanlithietbi(tao) {
+    const [tentb, setTentb] = useState('');
+    const [matb, setMatb] = useState('');
+    const [soluong, Soluong] = useState('');
+    const [nhasx, setNhasx] = useState('');
+    const [namsx, setNamsx] = useState('');
+    const [thongso, setThongso] = useState('');
+
+
+    const [data, setData] = useState([]);
+  
+    function handleSubmit(event) {
+      event.preventDefault();
+      axios
+        .get('http://localhost:4000/thietbi', { params: { tentb, matb,soluong,nhasx,namsx ,thongso} })
+        .then((res) => setData(res.data))
+        .catch((err) => console.log(err));
+    }
+    useEffect(() => {
+      axios
+        .get('http://localhost:4000/thietbi')
+        .then((res) => setData(res.data))
+        .catch((err) => console.log(err));
+    }, []);
+
   return (
     <div>
       <AdminLayout>
-        <div className="container">
+        <form className="container" onSubmit={handleSubmit}>
           <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem]">
             Quản Lý Thiết Bị
           </h3>
           <div className="table-cauhinh">
             <button className="form-tao">
               {" "}
-              <Link to="/formtaotb">
+              <Link to={`/formtaotb/${tao.id}`}>
                 <AddIcon className="!text-[#edf0ed] !w-7 !h-7 mr-1 mb-1" />
                 Tạo Mới
               </Link>
@@ -24,32 +51,24 @@ function Quanlithietbi() {
             <table>
               <tr>
                 <th>STT</th>
-                <th>Tên Thiêt Bị</th>
+                <th>Mã Thiết Bị</th>
+                <th>Tên Thiết Bị</th>
                 <th>Số Lượng</th>
                 <th>Nhà Sản Xuất</th>
                 <th>Năm Sản Xuất</th>
                 <th>Thông Số</th>
                 <th>Sửa Đổi</th>
               </tr>
-              <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>
-                  <button>
-                    <BorderColorIcon className=" bg-gradient-to-r from-yellow-500 to-yellow-700 !w-8 !h-8 py-1 rounded-lg text-[#ffffff] " />
-                  </button>
-                  <button>
-                    <DeleteForeverIcon className=" ml-5 bg-gradient-to-r from-red-700 to-red-500 rounded-lg !w-8 !h-8 py-1 text-[#ffffff] " />
-                  </button>
-                </td>
-              </tr>
+             
+              {data.map((thietbi, index) => {
+            return <Thietbi key={index} thietbi={thietbi} />;
+          })}
+                
+               
+              
             </table>
           </div>
-        </div>
+        </form>
       </AdminLayout>
     </div>
   );

@@ -1,16 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AdminLayout from "../../components/layout/adminlayout";
 import AddTaskIcon from "@mui/icons-material/AddTask";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import "./index.css";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 function Formtaopm() {
+   
+  const [maphong, setMaphong] = useState('');
+  const [tenphong, setTenphong] = useState('');
+  const [loaiphong, setLoaiphong] = useState('');
+
+  const [khuvuc, setKhuvuc] = useState('');
+
+  const [trangthai, setTrangthai] = useState('');
+
+  const [data, setData] = useState([]);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    axios
+      .get('http://localhost:4000/phongmay', {
+        params: {
+          maphong,
+          tenphong,
+          loaiphong,
+          khuvuc,
+          trangthai,
+        },
+      })
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }
+  useEffect(() => {
+    axios
+      .get('http://localhost:4000/phongmay')
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div>
       <AdminLayout>
         <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem]">
           Quản Lý Phòng Máy
         </h3>
-        <div className="form-cauhinh">
+        <form className="form-cauhinh" onSubmit={handleSubmit}>
           <div className="infor">
             <label htmlFor="mp">Mã Phòng</label>
             <br />
@@ -57,7 +91,7 @@ function Formtaopm() {
               </table>
             </div>
           </div>
-        </div>
+        </form>
       </AdminLayout>
     </div>
   );
