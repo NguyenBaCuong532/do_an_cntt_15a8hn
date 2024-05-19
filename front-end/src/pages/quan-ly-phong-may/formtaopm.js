@@ -1,66 +1,74 @@
-import React, { useEffect, useState } from "react";
-import AdminLayout from "../../components/layout/adminlayout";
-import AddTaskIcon from "@mui/icons-material/AddTask";
-import RestartAltIcon from "@mui/icons-material/RestartAlt";
-import "./index.css";
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import AddTaskIcon from '@mui/icons-material/AddTask';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import axios from 'axios';
+import React, { useState } from 'react';
+import AdminLayout from '../../components/layout/adminlayout';
+import './index.css';
 function Formtaopm() {
-   
   const [maphong, setMaphong] = useState('');
   const [tenphong, setTenphong] = useState('');
   const [loaiphong, setLoaiphong] = useState('');
-
   const [khuvuc, setKhuvuc] = useState('');
-
   const [trangthai, setTrangthai] = useState('');
-
-  const [data, setData] = useState([]);
+  const [soluong, setSoluong] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
     axios
-      .get('http://localhost:4000/phongmay', {
-        params: {
-          maphong,
-          tenphong,
-          loaiphong,
-          khuvuc,
-          trangthai,
-        },
+      .post('http://localhost:4000/phongmay/create', {
+        maphong,
+        tenphong,
+        loaiphong,
+        khuvuc,
+        trangthai,
+        soluong,
       })
-      .then((res) => setData(res.data))
+      .then((res) => {
+        console.log(res.data);
+      })
       .catch((err) => console.log(err));
   }
-  useEffect(() => {
-    axios
-      .get('http://localhost:4000/phongmay')
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+
   return (
     <div>
       <AdminLayout>
         <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem]">
-          Quản Lý Phòng Máy
+          Thêm Phòng Máy
         </h3>
         <form className="form-cauhinh" onSubmit={handleSubmit}>
           <div className="infor">
             <label htmlFor="mp">Mã Phòng</label>
             <br />
-            <input type="text" id="mp" />
+            <input
+              type="text"
+              id="mp"
+              onChange={(e) => setMaphong(e.target.value)}
+            />
             <br />
             <label htmlFor="tp">Tên Phòng</label>
             <br />
-            <input type="text" id="tp" />
+            <input
+              type="text"
+              id="tp"
+              onChange={(e) => setTenphong(e.target.value)}
+            />
             <br />
-            <label htmlFor="lp">Loại Phòng</label>
-            <br />
-            <input type="text" id="lp" />
-            <br />
+
             <label htmlFor="khuvuc">Khu Vực</label>
             <br />
-            <input type="text" id="khuvuc" />
+            <input
+              type="text"
+              id="khuvuc"
+              onChange={(e) => setKhuvuc(e.target.value)}
+            />
+            <br />
+            <label htmlFor="tp">Số Lượng</label>
+            <br />
+            <input
+              type="text"
+              id="tp"
+              onChange={(e) => setSoluong(e.target.value)}
+            />
             <br />
           </div>
           <div className="infor1">
@@ -80,7 +88,10 @@ function Formtaopm() {
 
               <table>
                 <td>
-                  <select className="chon">
+                  <select
+                    className="chon"
+                    onChange={(e) => setTrangthai(e.target.value)}
+                  >
                     <option selected disabled>
                       Trạng thái hoạt động
                     </option>

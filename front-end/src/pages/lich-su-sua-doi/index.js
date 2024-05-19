@@ -6,18 +6,16 @@ import { Lichsu } from "./lichsu";
 import axios from "axios";
 
 const Lichsusuadoi = () => {
-    const [tenmay, setTenmay] = useState('');
-    const [tenmaycn, setTenmaycn] = useState('');
-    const [cauhinh, setCauhinh] = useState('');
-    const [ngay, setNgay] = useState('');
-    const [ghichu, setGhichu] = useState('');
+
+    const [search, setSearch] = useState('');
+ 
 
     const [data, setData] = useState([]);
   
     function handleSubmit(event) {
       event.preventDefault();
       axios
-        .get('http://localhost:4000/lichsutk', { params: { tenmay, tenmaycn,cauhinh,ngay,ghichu } })
+        .get('http://localhost:4000/lichsutk', { params: { search } })
         .then((res) => setData(res.data))
         .catch((err) => console.log(err));
     }
@@ -44,32 +42,12 @@ const Lichsusuadoi = () => {
                   className="searchls-nhap"
                   type="text"
                   placeholder="Nhập Từ Khóa"
-                  
+
+                  onChange={(e) => setSearch(e.target.value)}
                 />
               </td>
               <td>
-                <div className=" mr-80">
-                  <input
-                    className="search-check "
-                    type="checkbox"
-                    id="pc1"
-                    name="pc1"
-                    value="Máy"
-                  />
-                  <label>Máy</label>
-                  <input
-                    className="search-check"
-                    type="checkbox"
-                    placeholder="Tên Phòng"
-                  />
-                  <label>Phòng</label>
-                  <input
-                    className=" search-check"
-                    type="checkbox"
-                    placeholder="Tên Phòng"
-                  />
-                  <label>Ngày</label>
-                </div>
+                
               </td>
               <td>
                 <div className="select"></div>

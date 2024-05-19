@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import AdminLayout from '../../components/layout/adminlayout';
-import './index.css';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { Link } from 'react-router-dom';
-import AddIcon from '@mui/icons-material/Add';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import axios from 'axios';
-export const Phongmay = ({item}) => {
- 
+import { Link } from 'react-router-dom';
+import './index.css';
+export const Phongmay = ({item,getData}) => {
+ function xoaPhongmay(){
+  console.log(123)
+  axios.delete(`http://localhost:4000/phongmay/delete/${item.id}`)
+  .then((res)=>getData())
+  .catch((err)=>console.log(err))
+ }
   return (
       <tr>
         <td>{item.id}</td>
@@ -25,8 +27,8 @@ export const Phongmay = ({item}) => {
                   <BorderColorIcon className=" bg-gradient-to-r from-yellow-500 to-yellow-700 !w-8 !h-8 py-1 rounded-lg" />
                 </Link>
           </button>
-          <button>
-            <DeleteForeverIcon className=" ml-5 bg-gradient-to-r from-red-700 to-red-500 rounded-lg !w-8 !h-8 py-1 text-[#ffffff] " />
+          <button onClick={xoaPhongmay}>
+            <DeleteForeverIcon  className=" ml-5 bg-gradient-to-r from-red-700 to-red-500 rounded-lg !w-8 !h-8 py-1 text-[#ffffff] " />
           </button>
         </td>
       </tr>

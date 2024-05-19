@@ -10,8 +10,6 @@ router.get("/", function (request, response) {
   let khuvuc = query.khuvuc;
   let loaiphong = query.loaiphong;
 
-
-
   let sql = "SELECT * FROM phong_may";
   const whereSql = [];
   if (maphong) {
@@ -29,7 +27,6 @@ router.get("/", function (request, response) {
   if (loaiphong) {
     whereSql.push(`phong_may.loai_phong LIKE '%${loaiphong}%'`);
   }
-  
 
   if (whereSql.length > 0) {
     sql += " WHERE " + whereSql.join(" AND ");
@@ -47,7 +44,6 @@ router.get("/", function (request, response) {
         khuvuc: phong_may.khu_vuc,
         trangthai: phong_may.trang_thai,
         soluong: phong_may.so_luong,
-
       };
     });
     return response.json(result);
@@ -80,9 +76,37 @@ router.get("/:id", function (request, response) {
     [],
     function (error, result) {
       if (error) throw error;
-      if(result.length>0)
-      response.send(result[0]);
-    
+      if (result.length > 0) response.send(result[0]);
+    }
+  );
+});
+router.post("/create", function (request, response) {
+  let maphong = request.body.maphong;
+  let tenphong = request.body.tenphong;
+  let loaiphong = request.body.loaiphong;
+  let soluong = request.body.soluong;
+  let khuvuc = request.body.khuvuc;
+  let trangthai = request.body.trangthai;
+  database.query(
+    `INSERT INTO phong_may ( ma_phong, ten_phong, loai_phong, khu_vuc, trang_thai, so_luong) VALUES ("${maphong}", "${tenphong}", "${loaiphong}", "${khuvuc}", "${trangthai}", "${soluong}")`,
+    [],
+    function (error, result) {
+      if (error) throw error;
+      console.log(result);
+      response.end();
+    }
+  );
+});
+router.delete("/delete/:id", function (request, response) {
+  const id = request.params.id;
+  console.log(id)
+  database.query(
+    `DELETE FROM phong_may WHERE id = ${id};`,
+    [],
+    function (error, result) {
+
+      if (error) throw error;
+     return response.send("SUCCESS");
     }
   );
 });

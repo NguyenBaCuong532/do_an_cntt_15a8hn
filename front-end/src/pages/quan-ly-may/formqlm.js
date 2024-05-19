@@ -23,8 +23,8 @@ function Formqlm() {
     axios
       .get(`http://localhost:4000/qlmay/${param.id}`)
       .then((res) => {
-        setMamay(res.data.mamay);
-        setTenmay(res.data.tenmay);
+        setMamay(res.data.ma_may);
+        setTenmay(res.data.ten_may);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -32,7 +32,7 @@ function Formqlm() {
     <div>
       <AdminLayout>
         <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem]">
-          Quản Lý Phòng Máy
+          Edit Máy
         </h3>
         <form className="form-cauhinh" onSubmit={handleSubmit}>
           <div className="infor">
