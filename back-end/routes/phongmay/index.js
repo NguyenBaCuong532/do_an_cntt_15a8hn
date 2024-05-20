@@ -72,7 +72,7 @@ router.patch("/:id", function (request, response) {
 router.get("/:id", function (request, response) {
   const id = request.params.id;
   database.query(
-    `select * from phong_may where id =${id}`,
+    `select * from phong_may where id ="${id}"`,
     [],
     function (error, result) {
       if (error) throw error;
@@ -99,7 +99,6 @@ router.post("/create", function (request, response) {
 });
 router.delete("/delete/:id", function (request, response) {
   const id = request.params.id;
-  console.log(id)
   database.query(
     `DELETE FROM phong_may WHERE id = ${id};`,
     [],

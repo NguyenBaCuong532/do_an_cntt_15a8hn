@@ -6,21 +6,20 @@ router.get("/", function (request, response) {
   const query = request.query;
   let search = query.search;
 
-  let sql = `SELECT * FROM ls_sua_doi`;
+  let sql = `SELECT * FROM giao_vien`;
   if(search){
-    sql +=`  where ls_sua_doi.id=${search} or ls_sua_doi.ten_may_ht LIKE "% ${search}%" or ls_sua_doi.ten_may_cn LIKE "%${search}%" or ls_sua_doi.cau_hinh LIKE "%${search}%" or ls_sua_doi.ngay LIKE '%${search}%' or ls_sua_doi.ghi_chu LIKE '%${search}%'`;
+    sql +=` where giao_vien.id=${search} or giao_vien.ma_giao_vien LIKE "% ${search}%" or giao_vien.ten_giao_vien LIKE "%${search}%" or giao_vien.avatar LIKE "%${search}%" or giao_vien.khoa LIKE "%${search}%"`;
   }
 
 database.query(sql, [], function (error, results) {
     if (error) throw error;
-    const result = results.map((ls_sua_doi) => {
+    const result = results.map((giao_vien) => {
       return {
-        id: ls_sua_doi.id,
-        tenmay: ls_sua_doi.ten_may_ht,
-        tenmaycn: ls_sua_doi.ten_may_cn,
-        cauhinh: ls_sua_doi.cau_hinh,
-        ngay: ls_sua_doi.ngay,
-        ghichu: ls_sua_doi.ghi_chu,
+        id: giao_vien.id,
+        magv: giao_vien.ma_giao_vien,
+        tengv: giao_vien.ten_giao_vien,
+        avt: giao_vien.avatar,
+        khoa: giao_vien.khoa,
 
       };
     });
@@ -29,6 +28,35 @@ database.query(sql, [], function (error, results) {
   });
 
 
+});
+router.patch("/:id", function (request, response) {
+  const id = request.params.id;
+  let tengv = request.body.tengv;
+  let magv = request.body.magv;
+  let avt = request.body.avt;
+  let khoa = request.body.khoa;
+
+  database.query(
+    `UPDATE giao_vien SET ten_giao_vien = "${tengv}", ma_giao_vien = "${magv}", avatar = "${avt}", khoa = "${khoa}" WHERE id =${id}`,
+    [],
+    function (error, result) {
+      if (error) throw error;
+      response.send("SUCCESS");
+      response.end();
+    }
+  );
+});
+router.delete("/delete/:id", function (request, response) {
+  const id = request.params.id;
+  database.query(
+    `DELETE FROM giao_vien WHERE id = ${id};`,
+    [],
+    function (error, result) {
+
+      if (error) throw error;
+     return response.send("SUCCESS");
+    }
+  );
 });
 
   module.exports = router;

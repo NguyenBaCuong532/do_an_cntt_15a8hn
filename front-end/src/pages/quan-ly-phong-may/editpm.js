@@ -52,7 +52,7 @@ function Editpm() {
     <div>
       <AdminLayout>
         <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem]">
-          Edit Phòng Máy
+          Sửa Lại Phòng Máy
         </h3>
         <form className="form-cauhinh" onSubmit={handleSubmit}>
           <div className="infor">

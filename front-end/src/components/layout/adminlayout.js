@@ -16,7 +16,7 @@ function AdminLayout(props) {
         <ul>
           <li>
             <PersonIcon className="!text-[#fff] !w-10 !h-10" />
-            <Link to="/quanlitaikhoan">Quản Lý Tài Khoản</Link>
+            <Link to="/quanlitaikhoan">Quản Lý Tài Khoản </Link>
           </li>
           <li>
             <ComputerIcon className="!text-[#fff] !w-10 !h-10" />
@@ -37,7 +37,7 @@ function AdminLayout(props) {
           </li>
           <li>
             <FindReplaceIcon className="!text-[#fff] !w-10 !h-10" />
-            <Link to="/lichsusuadoi">Lịch Sử Sửa Đổi</Link>
+            <Link to="/quanligiaovien">Quản Lý Giáo Viên</Link>
           </li>
         </ul>
       </nav>

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AdminLayout from "../../components/layout/adminlayout";
 import AddTaskIcon from "@mui/icons-material/AddTask";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import "./index.css";
 import axios from "axios";
-function Formtao() {
+import { useParams } from "react-router-dom";
+function Editch() {
   const [mach, setMach] = useState('');
     const [loaimay, setLoaimay] = useState('');
     const [hdh, setHdh] = useState('');
@@ -12,27 +13,41 @@ function Formtao() {
     const [ram, setRam] = useState('');
     const [oc, setOc] = useState('');
     const [vga, setVga] = useState('');
-    const [ghichu, setGhichu] = useState([]);
-  
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    axios
-      .post('http://localhost:4000/cauhinh/create', {
-        mach,
-        loaimay,
-        hdh,
-        cpu,
-        ram,
-        oc,
-        vga,
-        ghichu,
-      })
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err));
-  }
+    const param = useParams();
+    function handleSubmit(event) {
+      event.preventDefault();
+      axios
+        .patch(`http://localhost:4000/cauhinh/${param.id}`, { 
+            mach,
+            loaimay,
+            hdh,
+            cpu,
+            vga,
+            ram,
+            oc,
+          
+        })
+        .then((res) => {console.log(res);
+  
+        })
+        .catch((err) => console.log(err));
+    }
+  
+    useEffect(() => {
+      axios
+        .get(`http://localhost:4000/cauhinh/${param.id}`)
+        .then((res) => {
+          setMach(res.data.ma_ch);
+          setLoaimay(res.data.loai_may);
+          setHdh(res.data.he_dieu_hanh);
+          setCpu(res.data.cpu);
+          setRam(res.data.ram);
+          setOc(res.data.o_cung);
+          setVga(res.data.vga);
+        })
+        .catch((err) => console.log(err));
+    }, []);
   return (
     <div>
       <AdminLayout>
@@ -44,21 +59,23 @@ function Formtao() {
             <label htmlFor="ma-cauhinh">Mã Cấu Hình</label>
             <br />
             <input type="text" id="ma-cauhinh"
-            onChange={(e)=>setMach(e.target.value)}
+            disabled
+            value={mach}
             />
             <br />
             <label htmlFor="ma-lm">Loại Máy</label>
             <br />
-            <input type="text" id="ma-lm" onChange={(e)=>setLoaimay(e.target.value)}/>
+            <input type="text" id="ma-lm" 
+            value={loaimay}
+            onChange={(e)=>setLoaimay(e.target.value)}/>
             <br />
             <label htmlFor="ma-hdh">Hệ Điều Hành</label>
             <br />
-            <input type="text" id="ma-hdh" onChange={(e)=>setHdh(e.target.value)}/>
+            <input type="text" id="ma-hdh" 
+            value={hdh}
+            onChange={(e)=>setHdh(e.target.value)}/>
             <br />
-            <label htmlFor="ghichu">Ghi Chú</label>
-            <br />
-            <textarea className="text-tarea" id="ghichu" onChange={(e)=>setGhichu(e.target.value)}></textarea>
-            <br />
+            
           </div>
           <div className="infor1">
             <h2>Xuất Dữ Liệu</h2>
@@ -75,19 +92,19 @@ function Formtao() {
             <div>
               <label>CPU</label>
               <br />
-              <input onChange={(e)=>setCpu(e.target.value)}/>
+              <input value={cpu} onChange={(e)=>setCpu(e.target.value)}/>
               <br />
               <label>RAM</label>
               <br />
-              <input onChange={(e)=>setRam(e.target.value)}/>
+              <input value={ram} onChange={(e)=>setRam(e.target.value)}/>
               <br />
               <label>Ổ Cứng</label>
               <br />
-              <input  onChange={(e)=>setOc(e.target.value)}/>
+              <input  value={oc} onChange={(e)=>setOc(e.target.value)}/>
               <br />
               <label>VGA</label>
               <br />
-              <input onChange={(e)=>setVga(e.target.value)}/>
+              <input value={vga} onChange={(e)=>setVga(e.target.value)}/>
               <br />
             </div>
           </div>
@@ -97,4 +114,4 @@ function Formtao() {
   );
 }
 
-export default Formtao;
+export default Editch;

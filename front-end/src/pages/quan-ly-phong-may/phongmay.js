@@ -12,6 +12,7 @@ export const Phongmay = ({item,getData}) => {
   .then((res)=>getData())
   .catch((err)=>console.log(err))
  }
+
   return (
       <tr>
         <td>{item.id}</td>

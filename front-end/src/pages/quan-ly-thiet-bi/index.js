@@ -8,7 +8,7 @@ import { Thietbi } from "./thietbi";
 import AddIcon from "@mui/icons-material/Add";
 
 
-function Quanlithietbi(tao) {
+function Quanlithietbi() {
     const [tentb, setTentb] = useState('');
     const [matb, setMatb] = useState('');
     const [soluong, Soluong] = useState('');
@@ -23,6 +23,16 @@ function Quanlithietbi(tao) {
       event.preventDefault();
       axios
         .get('http://localhost:4000/thietbi', { params: { tentb, matb,soluong,nhasx,namsx ,thongso} })
+        .then((res) => setData(res.data))
+        .catch((err) => console.log(err));
+    }
+    useEffect(() => {
+      getData();
+    }, []);
+    
+    function getData(){
+      axios
+        .get('http://localhost:4000/thietbi')
         .then((res) => setData(res.data))
         .catch((err) => console.log(err));
     }
@@ -43,7 +53,7 @@ function Quanlithietbi(tao) {
           <div className="table-cauhinh">
             <button className="form-tao">
               {" "}
-              <Link to={`/formtaotb/${tao.id}`}>
+              <Link to="/quanlithietbi/formtaotb">
                 <AddIcon className="!text-[#edf0ed] !w-7 !h-7 mr-1 mb-1" />
                 Tạo Mới
               </Link>
@@ -61,7 +71,7 @@ function Quanlithietbi(tao) {
               </tr>
              
               {data.map((thietbi, index) => {
-            return <Thietbi key={index} thietbi={thietbi} />;
+            return <Thietbi key={index} thietbi={thietbi} getData={getData}/>;
           })}
                 
                

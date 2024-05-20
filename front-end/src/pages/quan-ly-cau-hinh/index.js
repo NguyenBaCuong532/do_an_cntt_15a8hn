@@ -9,13 +9,12 @@ import { Cauhinh } from "./cauhinh";
 import axios from "axios";
 
 
-function Quanlicauhinh({item}) {
+function Quanlicauhinh({ch}) {
     const [mach, setMach] = useState('');
     const [loaimay, setLoaimay] = useState('');
     const [hdh, setHdh] = useState('');
     const [cpu, setCpu] = useState('');
     const [ram, setRam] = useState('');
-
     const [oc, setOc] = useState('');
     const [vga, setVga] = useState('');
     const [ghichu, setGhichu] = useState([]);
@@ -37,13 +36,15 @@ function Quanlicauhinh({item}) {
         .catch((err) => console.log(err));
     }
     useEffect(() => {
+      getData();
+    }, []);
+    
+    function getData(){
       axios
         .get('http://localhost:4000/cauhinh')
         .then((res) => setData(res.data))
         .catch((err) => console.log(err));
-    }, []);
-
-
+    }
   return (
     <div>
       <AdminLayout>

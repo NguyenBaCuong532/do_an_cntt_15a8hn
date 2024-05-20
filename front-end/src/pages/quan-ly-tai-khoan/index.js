@@ -1,29 +1,39 @@
 import SearchIcon from '@mui/icons-material/Search';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import AddIcon from '@mui/icons-material/Add';
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import AdminLayout from '../../components/layout/adminlayout';
 import './index.css';
 import { User } from './user';
+import { Link } from 'react-router-dom';
 
-const QuanLyTaiKhoan = () => {
+const QuanLyTaiKhoan = (user) => {
   const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [fullname, setFullname] = useState('');
+  const [khoa, setKhoa] = useState('');
   const [data, setData] = useState([]);
 
   function handleSubmit(event) {
     event.preventDefault();
     axios
-      .get('http://localhost:4000/user', { params: { name, email } })
+      .get('http://localhost:4000/user', { params: { name, email} })
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }
   useEffect(() => {
+    getData();
+  }, []);
+  
+  function getData(){
     axios
       .get('http://localhost:4000/user')
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  }
   return (
     <AdminLayout>
       <div className="qlpm-container ">
@@ -43,7 +53,7 @@ const QuanLyTaiKhoan = () => {
                 <input className='user-ht'
                   type="text"
                   placeholder="Tìm Kiếm Theo Họ Tên"
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => setFullname(e.target.value)}
                 />
               </td>
               <td>
@@ -57,26 +67,29 @@ const QuanLyTaiKhoan = () => {
             <tr>
               <td>
                 <div>
-                  <button className="luu">
+                  <button className="luu" type='submit'>
                     <SearchIcon className=" mr-1" />
                     Tìm Kiếm
                   </button >
-                  <button className="reset">
-                  <RestartAltIcon/><input type="reset" className='rs'
-                  
-                  ></input>
+                  <button className="reset" type='reset'>
+                  <RestartAltIcon/>ReSet              
                   </button>
                   
                 </div>
               </td>
             </tr>
           </table>
-        </form>
+        </form><button className="form-tao !ml-[60px]">
+              <Link to={ `/quanlitaikhoan/themuser`}>
+                <AddIcon className="!text-[#edf0ed] !w-7 !h-7 mr-1 mb-1" />
+                Tạo Mới
+              </Link>
+            </button>
         <div className="table-cauhinh flex flex-row gap-6 flex-wrap">
-          {/* <User />
-          <User /> */}
+        
+      
           {data.map((user, index) => {
-            return <User key={index} user={user} />;
+            return <User key={index} user={user} getData={getData}/>;
           })}
         </div>
       </div>

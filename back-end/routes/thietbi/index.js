@@ -11,7 +11,7 @@ router.get("/", function (request, response) {
   let namsx = query.namsx;
   let thongso = query.thongso;
 
-
+//lấy
   let sql = "SELECT * FROM thiet_bi";
   const whereSql = [];
   if (tentb) {
@@ -38,7 +38,6 @@ router.get("/", function (request, response) {
   } else {
     
   }
-
 database.query(sql, [], function (error, results) {
     if (error) throw error;
     const result = results.map((thiet_bi) => {
@@ -50,16 +49,12 @@ database.query(sql, [], function (error, results) {
         nhasx: thiet_bi.nha_sx,
         namsx: thiet_bi.nam_sx,
         thongso: thiet_bi.thong_so,
-
-
       };
     });
     return response.json(result);
-    
   });
-
-
 });
+//sưa
 router.patch("/:id", function (request, response) {
     const id = request.params.id;
     let tentb = request.body.tentb;
@@ -79,10 +74,11 @@ router.patch("/:id", function (request, response) {
       }
     );
   });
+  //lây theo id
   router.get("/:id", function (request, response) {
     const id = request.params.id;
     database.query(
-      `select * from thiet_bi where id =${id}`,
+      `select * from thiet_bi where id ="${id}"`,
       [],
       function (error, result) {
         if (error) throw error;
@@ -92,5 +88,38 @@ router.patch("/:id", function (request, response) {
       }
     );
   });
+  //them
+  router.post("/create", function (request, response) {
+    
+    let tentb = request.body.tentb;
+    let matb = request.body.matb;
+    let soluong = request.body.soluong;
+    let nhasx = request.body.nhasx;
+    let namsx = request.body.namsx;
+    let thongso = request.body.thongso;
+    database.query(
+      `INSERT INTO thiet_bi ( ma_tb, ten_tb, so_luong, nha_sx, nam_sx, thong_so) VALUES ("${matb}", "${tentb}", "${soluong}", "${nhasx}", "${namsx}", "${thongso}")`,
+      [],
+      function (error, result) {
+        if (error) throw error;
+        console.log(result);
+        response.end();
+      }
+    );
+  });
 
+  //xoa
+  router.delete("/delete/:id", function (request, response) {
+    const id = request.params.id;
+    console.log(id)
+    database.query(
+      `DELETE FROM thiet_bi WHERE id = ${id};`,
+      [],
+      function (error, result) {
+  
+        if (error) throw error;
+       return response.send("SUCCESS");
+      }
+    );
+  });
   module.exports = router;

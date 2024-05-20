@@ -17,36 +17,25 @@ function Formtaotb() {
   function handleSubmit(event) {
     event.preventDefault();
     axios
-      .patch(`http://localhost:4000/thietbi/${param.id}`, { 
-        tentb, matb,soluong,nhasx,namsx ,thongso
-        
+      .post('http://localhost:4000/thietbi/create', {
+        tentb,
+        matb,
+        soluong,
+        nhasx,
+        namsx,
+        thongso,
       })
-      .then((res) => {console.log(res);
-
+      .then((res) => {
+        console.log(res.data);
       })
       .catch((err) => console.log(err));
   }
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:4000/thietbi/${param.id}`)
-      .then((res) => {
-        setTentb(res.data.ten_tb);
-        setMatb(res.data.ma_tb);
-        setSoluong(res.data.so_luong);
-        setNhasx(res.data.nha_sx);
-        setNamsx(res.data.nam_sx);
-        setThongso(res.data.thong_so);
-        
-
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  
   return (
     <div>
       <AdminLayout>
         <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem] mr-20">
-          Quản Lý Thiết Bị
+          Thêm Thiết Bị
         </h3>
         <form className="form-cauhinh" onSubmit={handleSubmit}>
           <div className="infor-tb">
@@ -55,9 +44,10 @@ function Formtaotb() {
                 <label htmlFor="ma-cauhinh">Mã Thiết Bị</label>
                 <br />
                 <input type="text" id="ma-cauhinh" 
-                disabled
-                 value={matb}           
-                  />
+                
+                 value={matb}    
+                 onChange={(e) => setMatb(e.target.value)} />       
+                
                 <br />
                 <label htmlFor="ma-lm">Tên Thiết Bị</label>
                 <br />

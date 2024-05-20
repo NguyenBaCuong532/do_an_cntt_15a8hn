@@ -1,16 +1,14 @@
-import SearchIcon from '@mui/icons-material/Search';
-import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import AddIcon from '@mui/icons-material/Add';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import AdminLayout from '../../components/layout/adminlayout';
 import { Link } from 'react-router-dom';
-import AddIcon from '@mui/icons-material/Add';
-import BorderColorIcon from '@mui/icons-material/BorderColor';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import AdminLayout from '../../components/layout/adminlayout';
+import SearchIcon from '@mui/icons-material/Search';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import './index.css';
 import { Phongmay } from './phongmay';
 
-const QuanLyPhongMay = () => {
+const QuanLyPhongMay = (item) => {
   const [maphong, setMaphong] = useState('');
   const [tenphong, setTenphong] = useState('');
   const [loaiphong, setLoaiphong] = useState('');
@@ -18,6 +16,7 @@ const QuanLyPhongMay = () => {
   const [trangthai, setTrangthai] = useState('');
   const [data, setData] = useState([]);
 
+  
   function handleSubmit(event) {
     event.preventDefault();
     axios
@@ -34,12 +33,17 @@ const QuanLyPhongMay = () => {
       .catch((err) => console.log(err));
   }
   useEffect(() => {
+    getData();
+  }, []);
+  
+  function getData(){
     axios
       .get('http://localhost:4000/phongmay')
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  }
   
+
   return (
     <AdminLayout>
       <form className="qlpm-container " onSubmit={handleSubmit}>
@@ -71,7 +75,7 @@ const QuanLyPhongMay = () => {
                
                 >
                   <select className="chon"  onChange={(e) => setLoaiphong(e.target.value)}>
-                    <option selected disabled>
+                    <option >
                       Chọn loại phòng
                     </option>
                     <option value="Phòng cấu hình cao"  >Phòng cấu hình cao</option>
@@ -83,7 +87,7 @@ const QuanLyPhongMay = () => {
             <tr>
               <td>
                 <select className="chon"  onChange={(e) => setKhuvuc(e.target.value)}>
-                  <option selected disabled>
+                  <option  value='Chọn khu vực'>
                     Chọn khu vực
                   </option>
                   <option value="Khu vực 1">Khu vực 1</option>
@@ -94,7 +98,7 @@ const QuanLyPhongMay = () => {
               </td>
               <td>
                 <select className="chon"  onChange={(e) => setTrangthai(e.target.value)}>
-                  <option selected disabled>
+                  <option >
                     Trạng thái hoạt động
                   </option>
                   <option value="Đang sử dụng">Đang sử dụng</option>
@@ -103,8 +107,8 @@ const QuanLyPhongMay = () => {
               </td>
               <td>
                 <div>
-                  <button className="luu">Tìm Kiếm</button>
-                  <button className="reset">Reset</button>
+                  <button className="luu" type='submit'><SearchIcon/>Tìm Kiếm</button>
+                  <button className="reset" type='reset'><RestartAltIcon/>Reset</button>
                 </div>
               </td>
             </tr>
@@ -113,7 +117,7 @@ const QuanLyPhongMay = () => {
         <div>
           <div className="table-cauhinh">
             <button className="form-tao">
-              <Link to='/formtaopm'>
+              <Link to={ `/quanliphongmay/formtaopm`}>
                 <AddIcon className="!text-[#edf0ed] !w-7 !h-7 mr-1 mb-1" />
                 Tạo Mới
               </Link>
@@ -130,7 +134,7 @@ const QuanLyPhongMay = () => {
                 <th>Thay Đổi</th>
               </tr>
               {data.map((phong, index) => {
-                return <Phongmay key={index} item={phong} />;
+                return <Phongmay key={index} item={phong} getData={getData}/>;
               })}
             </table>
           </div>

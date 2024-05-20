@@ -9,13 +9,9 @@ router.get("/", function (request, response) {
   let hdh = query.hdh;
   let cpu = query.cpu;
   let ram = query.ram;
-
   let oc = query.oc;
   let vga = query.vga;
   let ghichu = query.ghichu;
-
-
-
   let sql = "SELECT * FROM cau_hinh";
   const whereSql = [];
   if (mach) {
@@ -42,14 +38,10 @@ router.get("/", function (request, response) {
   if (ghichu) {
     whereSql.push(`cau_hinh.ghi_chu LIKE '%${ghichu}%'`);
   }
-
-
   if (whereSql.length > 0) {
     sql += " WHERE " + whereSql.join(" AND ");
-  } else {
-    
+  } else {   
   }
-
 database.query(sql, [], function (error, results) {
     if (error) throw error;
     const result = results.map((cau_hinh) => {
@@ -70,8 +62,71 @@ database.query(sql, [], function (error, results) {
     return response.json(result);
     
   });
-
-
 });
+router.post("/create", function (request, response) {
+    
+  let mach = request.body.mach;
+  let loaimay = request.body.loaimay;
+  let hdh = request.body.hdh;
+  let cpu = request.body.cpu;
+  let ram = request.body.ram;
+  let oc = request.body.oc;
+  let vga = request.body.vga;
+  let ghichu = request.body.ghichu;
 
+  database.query(
+    `INSERT INTO cau_hinh ( ma_ch, loai_may, he_dieu_hanh, cpu, ram, o_cung,vga,ghi_chu) VALUES ("${mach}", "${loaimay}", "${hdh}", "${cpu}", "${ram}", "${oc}", "${vga}", "${ghichu}")`,
+    [],
+    function (error, result) {
+      if (error) throw error;
+      console.log(result);
+      response.end();
+    }
+  );
+});
+router.delete("/delete/:id", function (request, response) {
+  const id = request.params.id;
+  database.query(
+    `DELETE FROM cau_hinh WHERE id = ${id};`,
+    [],
+    function (error, result) {
+
+      if (error) throw error;
+     return response.send("SUCCESS");
+    }
+  );
+});
+router.patch("/:id", function (request, response) {
+  const id = request.params.id;
+  let mach = request.body.mach;
+  let loaimay = request.body.loaimay;
+  let hdh = request.body.hdh;
+  let cpu = request.body.cpu;
+  let ram = request.body.ram;
+  let oc = request.body.oc;
+  let vga = request.body.vga;
+
+  database.query(
+    `UPDATE cau_hinh SET ma_ch = "${mach}", loai_may = "${loaimay}", he_dieu_hanh = "${hdh}", cpu = "${cpu}", ram = "${ram}", o_cung = "${oc}", vga = "${vga}" WHERE id =${id}`,
+    [],
+    function (error, result) {
+      if (error) throw error;
+      response.send("SUCCESS");
+      response.end();
+    }
+  );
+});
+router.get("/:id", function (request, response) {
+  const id = request.params.id;
+  database.query(
+    `select * from cau_hinh where id =${id}`,
+    [],
+    function (error, result) {
+      if (error) throw error;
+      if(result.length>0)
+      response.send(result[0]);
+    
+    }
+  );
+});
   module.exports = router;
