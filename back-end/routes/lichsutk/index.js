@@ -8,7 +8,7 @@ router.get("/", function (request, response) {
 
   let sql = `SELECT * FROM giao_vien`;
   if(search){
-    sql +=` where giao_vien.id=${search} or giao_vien.ma_giao_vien LIKE "% ${search}%" or giao_vien.ten_giao_vien LIKE "%${search}%" or giao_vien.avatar LIKE "%${search}%" or giao_vien.khoa LIKE "%${search}%"`;
+    sql +=` where giao_vien.id LIKE "%${search}%" or giao_vien.ma_giao_vien LIKE "%${search}%" or giao_vien.ten_giao_vien LIKE "%${search}%" or giao_vien.avatar LIKE "%${search}%" or giao_vien.khoa LIKE "%${search}%"`;
   }
 
 database.query(sql, [], function (error, results) {
@@ -37,7 +37,7 @@ router.patch("/:id", function (request, response) {
   let khoa = request.body.khoa;
 
   database.query(
-    `UPDATE giao_vien SET ten_giao_vien = "${tengv}", ma_giao_vien = "${magv}", avatar = "${avt}", khoa = "${khoa}" WHERE id =${id}`,
+    `UPDATE giao_vien SET ten_giao_vien = "${tengv}", ma_giao_vien = "${magv}", avatar="${avt}", khoa = "${khoa}" WHERE id =${id}`,
     [],
     function (error, result) {
       if (error) throw error;

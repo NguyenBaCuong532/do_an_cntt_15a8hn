@@ -6,14 +6,14 @@ import './index.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 function Edituser() {
-  const [name, setName] = useState('');
+  const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
 
   const param = useParams();
   function handleSubmit(event) {
     event.preventDefault();
     axios
-      .patch(`http://localhost:4000/user/${param.id}`, { name, email })
+      .patch(`http://localhost:4000/user/${param.id}`, { fullname, email })
       .then((res) => {
         console.log(res);
       })
@@ -23,7 +23,7 @@ function Edituser() {
     axios
       .get(`http://localhost:4000/user/${param.id}`)
       .then((res) => {
-        setName(res.data.fullname);
+        setFullname(res.data.fullname);
         setEmail(res.data.email);
       })
       .catch((err) => console.log(err));
@@ -39,15 +39,16 @@ function Edituser() {
             <label htmlFor="mp">Họ Tên</label>
             <br />
             <input
-             type="text"
+              type="text"
               id="mp"
-              value={name}           
-              onChange={(e) => setName(e.target.value)}
+              value={fullname}
+              onChange={(e) => setFullname(e.target.value)}
             />
             <br />
             <label htmlFor="tp">Email</label>
             <br />
-            <input className=''
+            <input
+              className=""
               value={email}
               type="text"
               id="tp"
@@ -67,21 +68,7 @@ function Edituser() {
                 Reset
               </button>
             </div>
-            <div>
-              <h3>Trạng Thái</h3>
-
-              <table>
-                <td>
-                  <select className="chon">
-                    <option selected disabled>
-                      Trạng thái hoạt động
-                    </option>
-                    <option value="">Đang sử dụng</option>
-                    <option value="">Chưa sử dụng</option>
-                  </select>
-                </td>
-              </table>
-            </div>
+            
           </div>
         </form>
       </AdminLayout>

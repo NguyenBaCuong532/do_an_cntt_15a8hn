@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import './index.css';
 export const Phongmay = ({item,getData}) => {
  function xoaPhongmay(){
-  console.log(123)
   axios.delete(`http://localhost:4000/phongmay/delete/${item.id}`)
   .then((res)=>getData())
   .catch((err)=>console.log(err))
@@ -21,7 +20,7 @@ export const Phongmay = ({item,getData}) => {
         <td>{item.loaiphong}</td>
         <td>{item.soluong}</td>
         <td>{item.khuvuc}</td>
-        <td>{item.trangthai}</td>
+      
         <td>
           <button>
           <Link to={ `/quanliphongmay/${item.id}`}>

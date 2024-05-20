@@ -5,18 +5,16 @@ const router = express.Router();
 router.get("/", function (request, response) {
   const query = request.query;
   let email = query.email;
-  let password = query.password;
-  let name = query.name;
   let fullname = query.fullname;
-  let khoa = query.khoa;
+
 
   let sql = "SELECT * FROM user";
   const whereSql = [];
   if (email) {
     whereSql.push(`user.email LIKE '%${email}%'`);
   }
-  if (name) {
-    whereSql.push(`user.name LIKE '%${name}%'`);
+  if (fullname) {
+    whereSql.push(`user.fullname LIKE '%${fullname}%'`);
   }
 
 
@@ -25,14 +23,14 @@ router.get("/", function (request, response) {
   } else {
     sql += " where user.permision = 1";
   }
-
   database.query(sql, [], function (error, results) {
     if (error) throw error;
     const result = results.map((user) => {
       return {
         id: user.id,
         email: user.email,
-        name: user.fullname,
+        fullname: user.fullname,
+       
        
       };
     });
@@ -80,7 +78,7 @@ router.post("/create", function (request, response) {
   let khoa = request.body.khoa;
   
   database.query(
-    `INSERT INTO user ( name, password, email, fullname, khoa) VALUES ("${name}", "${password}", "${email}", "${fullname}", "${khoa}")`,
+    `INSERT INTO user ( name, password, email, fullname, khoa,permision) VALUES ("${name}", "${password}", "${email}", "${fullname}", "${khoa}","1")`,
     [],
     function (error, result) {
       if (error) throw error;

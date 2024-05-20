@@ -20,15 +20,15 @@ const QuanLyTaiKhoan = (user) => {
   function handleSubmit(event) {
     event.preventDefault();
     axios
-      .get('http://localhost:4000/user', { params: { name, email} })
+      .get('http://localhost:4000/user', { params: { fullname, email } })
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }
   useEffect(() => {
     getData();
   }, []);
-  
-  function getData(){
+
+  function getData() {
     axios
       .get('http://localhost:4000/user')
       .then((res) => setData(res.data))
@@ -36,7 +36,7 @@ const QuanLyTaiKhoan = (user) => {
   }
   return (
     <AdminLayout>
-      <div className="qlpm-container ">
+      <div className="qlpm-container">
         <p className="text-center font-bold text-[2.75rem] py-[1.25rem]">
           Quản Lý Tài Khoản
         </p>
@@ -50,16 +50,20 @@ const QuanLyTaiKhoan = (user) => {
           <table>
             <tr>
               <td>
-                <input className='user-ht'
+                <input
+                  className="user-ht"
                   type="text"
                   placeholder="Tìm Kiếm Theo Họ Tên"
+                  value={fullname}
                   onChange={(e) => setFullname(e.target.value)}
                 />
               </td>
               <td>
-                <input className='user-ht mr-80'
+                <input
+                  className="user-ht mr-80"
                   type="text"
                   placeholder="Tìm Kiếm Theo Email"
+                  value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </td>
@@ -67,29 +71,28 @@ const QuanLyTaiKhoan = (user) => {
             <tr>
               <td>
                 <div>
-                  <button className="luu" type='submit'>
+                  <button className="luu" type="submit">
                     <SearchIcon className=" mr-1" />
                     Tìm Kiếm
-                  </button >
-                  <button className="reset" type='reset'>
-                  <RestartAltIcon/>ReSet              
                   </button>
-                  
+                  <button className="reset" type="reset">
+                    <RestartAltIcon />
+                    ReSet
+                  </button>
                 </div>
               </td>
             </tr>
           </table>
-        </form><button className="form-tao !ml-[60px]">
-              <Link to={ `/quanlitaikhoan/themuser`}>
-                <AddIcon className="!text-[#edf0ed] !w-7 !h-7 mr-1 mb-1" />
-                Tạo Mới
-              </Link>
-            </button>
+        </form>
+        <button className="form-tao !ml-[60px]">
+          <Link to={`/quanlitaikhoan/themuser`}>
+            <AddIcon className="!text-[#edf0ed] !w-7 !h-7 mr-1 mb-1" />
+            Tạo Mới
+          </Link>
+        </button>
         <div className="table-cauhinh flex flex-row gap-6 flex-wrap">
-        
-      
           {data.map((user, index) => {
-            return <User key={index} user={user} getData={getData}/>;
+            return <User key={index} user={user} getData={getData} />;
           })}
         </div>
       </div>

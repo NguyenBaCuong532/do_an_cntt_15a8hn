@@ -33,7 +33,7 @@ function AdminLayout(props) {
           </li>
           <li>
             <ImportantDevicesIcon className="!text-[#fff] !w-10 !h-10" />
-            <Link to="/quanlimay">Quản Lý Máy</Link>
+            <Link to="/quanlimay">Quản Lý Đăng Kí Máy</Link>
           </li>
           <li>
             <FindReplaceIcon className="!text-[#fff] !w-10 !h-10" />
@@ -41,7 +41,7 @@ function AdminLayout(props) {
           </li>
         </ul>
       </nav>
-      <main className=" pl-[270px] min-h-[100vh]">{props.children}</main>
+      <main className=" pl-[330px] min-h-[100vh]">{props.children}</main>
     </div>
   );
 }

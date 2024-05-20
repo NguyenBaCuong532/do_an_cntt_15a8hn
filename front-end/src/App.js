@@ -19,6 +19,7 @@ import Editthietbi from "./pages/quan-ly-thiet-bi/editthietbi";
 import Themuser from "./pages/quan-ly-tai-khoan/themuser";
 import Editch from "./pages/quan-ly-cau-hinh/editch";
 import Editgv from "./pages/quan-ly-gv/editgv";
+import Themmay from "./pages/quan-ly-may/themmay";
 
 
 
@@ -34,6 +35,8 @@ function App() {
 
         <Route path="/quanlimay" element={<QuanLyMay />} />
         <Route path="/quanlimay/:id" element={<Formqlm />} />
+        <Route path="/quanlimay/themmay" element={<Themmay />} />
+
 
         <Route path="/quanlicauhinh" element={<Quanlycauhinh />} />
         <Route path="/quanlicauhinh/:id" element={<Editch />} />

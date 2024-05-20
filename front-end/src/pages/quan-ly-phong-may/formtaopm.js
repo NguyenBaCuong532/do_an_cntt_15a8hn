@@ -97,24 +97,7 @@ function Formtaopm() {
                 Reset
               </button>
             </div>
-            <div>
-              <h3>Trạng Thái</h3>
-
-              <table>
-                <td>
-                  <select
-                    className="chon"
-                    onChange={(e) => setTrangthai(e.target.value)}
-                  >
-                    <option selected  value=' Trạng thái hoạt động'>
-                      Trạng thái hoạt động
-                    </option>
-                    <option value="Đang sử dụng">Đang sử dụng</option>
-                    <option value="Chưa sử dụng">Chưa sử dụng</option>
-                  </select>
-                </td>
-              </table>
-            </div>
+          
           </div>
         </form>
       </AdminLayout>

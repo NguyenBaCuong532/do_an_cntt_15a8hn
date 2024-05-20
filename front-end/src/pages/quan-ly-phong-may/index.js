@@ -130,7 +130,7 @@ const QuanLyPhongMay = (item) => {
                 <th>Loại Phòng</th>
                 <th>Số Lượng Máy</th>
                 <th>Khu Vực</th>
-                <th>Trạng Thái</th>
+             
                 <th>Thay Đổi</th>
               </tr>
               {data.map((phong, index) => {

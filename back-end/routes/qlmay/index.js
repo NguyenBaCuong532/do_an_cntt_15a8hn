@@ -4,30 +4,16 @@ const router = express.Router();
 
 router.get("/", function (request, response) {
   const query = request.query;
-  let mamay = query.mamay;
-  let tenmay = query.tenmay;
-  let sql = "SELECT * FROM quan_ly_may";
-  const whereSql = [];
-  if (mamay) {
-    whereSql.push(`quan_ly_may.ma_may LIKE '%${mamay}%'`);
-  }
-  if (tenmay) {
-    whereSql.push(`quan_ly_may.ten_may LIKE '%${tenmay}%'`);
-  }
 
-  if (whereSql.length > 0) {
-    sql += " WHERE " + whereSql.join(" AND ") ;
-  } else {
 
-  }
-
-  database.query(sql, [], function (error, results) {
+  database.query('SELECT * FROM dky_phong ', [], function (error, results) {
     if (error) throw error;
-    const result = results.map((quan_ly_may) => {
+    const result = results.map((dky_phong) => {
       return {
-        id: quan_ly_may.id,
-        mamay: quan_ly_may.ma_may,
-        tenmay: quan_ly_may.ten_may,
+        id: dky_phong.id,
+        ngdk: dky_phong.ngdky,
+        maydk: dky_phong.maydky,
+        trangthai:dky_phong.trang_thai,
       };
     });
     return response.json(result);
@@ -35,10 +21,15 @@ router.get("/", function (request, response) {
 });
 router.patch("/:id", function (request, response) {
     const id = request.params.id;
-    let mamay = request.body.mamay;
-    let tenmay = request.body.tenmay;
+    let ngdk = request.body.ngdk;
+    let maydk = request.body.maydk;
+    let tgbd = request.body.tgbd;
+    let tgkt = request.body.tgkt;
+    let md = request.body.md;
+   
+
     database.query(
-      `UPDATE quan_ly_may SET ma_may = "${mamay}", ten_may = "${tenmay}" WHERE id =${id}`,
+      `UPDATE dky_phong SET ngdky = "${ngdk}", maydky = "${maydk}", tg_bd = "${tgbd}", tg_kt = "${tgkt}", muc_dich = "${md}",, trang_thai = "${trangthai}" WHERE id =${id}`,
       [],
       function (error, result) {
         if (error) throw error;
@@ -50,7 +41,7 @@ router.patch("/:id", function (request, response) {
   router.get("/:id", function (request, response) {
     const id = request.params.id;
     database.query(
-      `select * from quan_ly_may where id =${id}`,
+      `select * from dky_phong where id =${id}`,
       [],
       function (error, result) {
         if (error) throw error;
@@ -60,5 +51,35 @@ router.patch("/:id", function (request, response) {
       }
     );
   });
+  router.post("/create", function (request, response) {
+    
+    let ngdk = request.body.ngdk;
+    let maydk = request.body.maydk;
+    let tgbd = request.body.tgbd;
+    let tgkt = request.body.tgkt;
+    let md = request.body.md;
+    let trangthai = request.body.trang_thai;
+    database.query(
+      `INSERT INTO dky_phong ( ngdky, maydky, tg_bd, tg_kt, muc_dich,trang_thai) VALUES ("${ngdk}", "${maydk}", "${tgbd}", "${tgkt}", "${md}", ${trangthai})`,
+      [],
+      function (error, result) {
+        if (error) throw error;
+        console.log(result);
+        response.end();
+      }
+    );
+  });
 
+  router.delete("/delete/:id", function (request, response) {
+    const id = request.params.id;
+    database.query(
+      `DELETE FROM dky_phong WHERE id = ${id};`,
+      [],
+      function (error, result) {
+  
+        if (error) throw error;
+       return response.send("SUCCESS");
+      }
+    );
+  });
 module.exports = router;

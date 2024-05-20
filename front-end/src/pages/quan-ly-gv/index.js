@@ -69,9 +69,9 @@ const Quanlygiaovien = (gv) => {
           <table>
             <tr>
               <th>STT</th>
-              <th>Avatar</th>
               <th>Mã Giáo Viên</th>
               <th>Tên giáo Viên</th>
+              <th>Avatar</th>
               <th>Tên Khoa</th>
               <th>Sửa Đổi</th>
             </tr>
