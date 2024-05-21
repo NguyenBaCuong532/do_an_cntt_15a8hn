@@ -36,7 +36,7 @@ function Formtao() {
   return (
     <div>
       <AdminLayout>
-        <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem]">
+        <h3 className="text-center !text-[#fff] font-bold text-[2.75rem] py-[1.25rem]">
           Thêm Cấu Hình
         </h3>
         <form className="form-cauhinh" onSubmit={handleSubmit}>
@@ -55,10 +55,7 @@ function Formtao() {
             <br />
             <input type="text" id="ma-hdh" onChange={(e)=>setHdh(e.target.value)}/>
             <br />
-            <label htmlFor="ghichu">Ghi Chú</label>
-            <br />
-            <textarea className="text-tarea" id="ghichu" onChange={(e)=>setGhichu(e.target.value)}></textarea>
-            <br />
+            
           </div>
           <div className="infor1">
             <h2>Xuất Dữ Liệu</h2>

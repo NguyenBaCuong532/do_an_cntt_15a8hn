@@ -11,12 +11,12 @@ import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 function AdminLayout(props) {
   return (
     <div className="admin-container ">
-      <nav className="side-nav bg-[#0E131F] fixed" >
+      <nav className="side-nav fixed" >
         <h2 className="text-white font-bold"><SupervisorAccountIcon className="!text-[#11f505] !w-20 !h-20 mr-4 mb-5" />ADMIN</h2>
         <ul>
           <li>
-            <PersonIcon className="!text-[#fff] !w-10 !h-10" />
-            <Link to="/quanlitaikhoan">Quản Lý Tài Khoản </Link>
+            
+            <Link to="/quanlitaikhoan"><PersonIcon className="!w-10 !h-10" />Quản Lý Tài Khoản </Link>
           </li>
           <li>
             <ComputerIcon className="!text-[#fff] !w-10 !h-10" />
@@ -41,7 +41,7 @@ function AdminLayout(props) {
           </li>
         </ul>
       </nav>
-      <main className=" pl-[330px] min-h-[100vh]">{props.children}</main>
+      <main className=" pl-[350px] min-h-[100vh]">{props.children}</main>
     </div>
   );
 }

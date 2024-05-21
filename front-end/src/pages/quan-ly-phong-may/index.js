@@ -47,12 +47,12 @@ const QuanLyPhongMay = (item) => {
   return (
     <AdminLayout>
       <form className="qlpm-container " onSubmit={handleSubmit}>
-        <p className="text-center font-bold text-[2.75rem] py-[1.25rem]">
+        <p className="text-center !text-[#fff] font-bold text-[2.75rem] py-[1.25rem]">
           Quản Lý Phòng Máy
         </p>
-        <div className="table-search flex flex-col gap-2">
+        <div className=" table-user flex flex-col gap-2">
           <h2 className="form-search font-bold text-[1.35rem] py-[1.25rem]">
-            Form Tìm Kiếm
+             Tìm Kiếm
           </h2>
           <table>
             <tr>

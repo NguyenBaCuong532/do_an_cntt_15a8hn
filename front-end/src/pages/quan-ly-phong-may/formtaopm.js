@@ -32,7 +32,7 @@ function Formtaopm() {
   return (
     <div>
       <AdminLayout>
-        <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem]">
+        <h3 className="text-center !text-[#fff] font-bold text-[2.75rem] py-[1.25rem]">
           Thêm Phòng Máy
         </h3>
         <form className="form-cauhinh" onSubmit={handleSubmit}>
@@ -57,23 +57,25 @@ function Formtaopm() {
         
           
             
-            <label htmlFor="tp">Số Lượng</label>
+            <label htmlFor="sl">Số Lượng</label>
             <br />
             <input
               type="text"
-              id="tp"
+              id="sl"
               onChange={(e) => setSoluong(e.target.value)}
             />
             <br />
-            <div className="table-search !border-none !bg-none">
-               <select className="chon"  onChange={(e) => setLoaiphong(e.target.value)}>
+            <div className='table-user1'>
+              <table>
+                <tr>
+                  <td><select className="chon"  onChange={(e) => setLoaiphong(e.target.value)}>
                     <option selected disabled>
                       Chọn loại phòng
                     </option>
                     <option value="Phòng cấu hình cao"  >Phòng cấu hình cao</option>
                     <option value="Phòng cấu hình thường" >Phòng cấu hình thường</option>
-                  </select>
-                  <select className="chon"  onChange={(e) => setKhuvuc(e.target.value)}>
+                  </select></td>
+                   <td> <select className="chon"  onChange={(e) => setKhuvuc(e.target.value)}>
                   <option selected value='Chọn khu vực'>
                     Chọn khu vực
                   </option>
@@ -81,8 +83,12 @@ function Formtaopm() {
                   <option value="Khu vực 2">Khu vực 2</option>
                   <option value="Khu vực 3">Khu vực 3</option>
                   <option value="Khu vực 4">Khu vực 4</option>
-                </select>
-            </div>
+                </select></td>
+                </tr>
+              </table>
+               
+                  </div>
+            
            
           </div>
           <div className="infor1">

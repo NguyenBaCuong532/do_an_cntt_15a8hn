@@ -31,7 +31,7 @@ function Themuser() {
   return (
     <div>
       <AdminLayout>
-        <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem]">
+        <h3 className="text-center text-[#fff] font-bold text-[2.75rem] py-[1.25rem]">
           Thêm Tài Khoản
         </h3>
         <form className="form-cauhinh" onSubmit={handleSubmit}>
@@ -61,19 +61,19 @@ function Themuser() {
               onChange={(e) => setEmail(e.target.value)}
             />
             <br />
-            <label htmlFor="mp">Tên Giáo Viên </label>
+            <label htmlFor="gv">Tên Giáo Viên </label>
             <br />
             <input
               type="text"
-              id="mp"
+              id="gv"
               onChange={(e) => setFullname(e.target.value)}
             />
             <br />
-            <label htmlFor="mp">Khoa </label>
+            <label htmlFor="k">Khoa </label>
             <br />
             <input
               type="text"
-              id="mp"
+              id="k"
               onChange={(e) => setKhoa(e.target.value)}
             />
             <br />
@@ -85,7 +85,7 @@ function Themuser() {
               <button className="luu" type="submit">
                 <AddTaskIcon className=" mr-1" />
                 Lưu Dữ Liệu
-              </button>
+              </button><br/>
               <button className="reset" type="reset">
                 <RestartAltIcon className=" mr-1" />
                 Reset

@@ -58,5 +58,18 @@ router.delete("/delete/:id", function (request, response) {
     }
   );
 });
+router.get("/:id", function (request, response) {
+  const id = request.params.id;
+  database.query(
+    `select * from giao_vien where id =${id}`,
+    [],
+    function (error, result) {
+      if (error) throw error;
+      if(result.length>0)
+      response.send(result[0]);
+    
+    }
+  );
+});
 
   module.exports = router;

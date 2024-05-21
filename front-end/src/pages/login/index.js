@@ -37,7 +37,7 @@ function Login() {
               className="form-control"
               onChange={(e) => setUsername(e.target.value)}
             />
-            <PersonOutlineIcon className="user !text-[#fff] !w-9 !h-9 mt-1" />
+            <PersonOutlineIcon className="user !text-[#fff] !w-9 !h-9 mt-1 mr-4" />
           </div>
           <div className="content-form-login">
             <label htmlFor="password">Mật Khẩu</label>
@@ -47,7 +47,7 @@ function Login() {
               className="form-control"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <LockIcon className="user !text-[#fff] !w-7 !h-7 mt-2" />
+            <LockIcon className="user !text-[#fff] !w-7 !h-7 mt-2 mr-4" />
           </div>
           <button className="login">Login</button>
         </form>

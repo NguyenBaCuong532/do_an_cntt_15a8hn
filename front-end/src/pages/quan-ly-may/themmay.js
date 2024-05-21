@@ -36,7 +36,7 @@ function Themmay() {
   return (
     <div>
       <AdminLayout>
-        <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem]">
+        <h3 className="text-center !text-[#fff] font-bold text-[2.75rem] py-[1.25rem]">
           Thêm Máy Đăng Ký
         </h3>
         <form className="form-cauhinh" onSubmit={handleSubmit}>
@@ -91,14 +91,14 @@ function Themmay() {
               </button>
             </div> 
             <td>
-                  <select className="chon"  value={trangthai}
-            onChange={(e) => setTrangthai(e.target.value)}>
-                    <option selected disabled>
-                      Trạng thái hoạt động
-                    </option>
-                    <option value="1">Đang sử dụng</option>
-                    <option value="0">Chưa sử dụng</option>
-                  </select>
+            <select
+                  className="chon mt-5"
+                  onChange={(e) => setTrangthai(e.target.value)}
+                >
+                  <option>Trạng thái hoạt động</option>
+                  <option value="Đang sử dụng">Đang sử dụng</option>
+                  <option value="Chưa sử dụng">Chưa sử dụng</option>
+                </select>
                 </td>        
           </div>
         </form>

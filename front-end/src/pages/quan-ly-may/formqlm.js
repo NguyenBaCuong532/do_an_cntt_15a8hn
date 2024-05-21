@@ -11,6 +11,8 @@ function Formqlm() {
   const [tgbd, setTgbd] = useState('');
   const [tgkt, setTgkt] = useState('');
   const [md, setMd] = useState('');
+  const [trangthai, setTrangthai] = useState('');
+
 
   const param = useParams();
   function handleSubmit(event) {
@@ -22,6 +24,7 @@ function Formqlm() {
         tgbd,
         tgkt,
         md,
+        trangthai,
       })
       .then((res) => {
         console.log(res);
@@ -33,10 +36,12 @@ function Formqlm() {
       .get(`http://localhost:4000/qlmay/${param.id}`)
       .then((res) => {
         setNgdk(res.data.ngdky);
-        setMaydk(res.data.maydk);
-        setMaydk(res.data.td_bd);
-        setMaydk(res.data.tg_kt);
-        setMaydk(res.data.md);
+        setMaydk(res.data.maydky);
+        setTgbd(res.data.tg_bd);
+        setTgkt(res.data.tg_kt);
+        setMd(res.data.muc_dich);
+        setTrangthai(res.data.trang_thai);
+
 
       })
       .catch((err) => console.log(err));
@@ -44,8 +49,8 @@ function Formqlm() {
   return (
     <div>
       <AdminLayout>
-        <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem]">
-          Edit Máy
+        <h3 className="text-center !text-[#fff] font-bold text-[2.75rem] py-[1.25rem]">
+         Sửa Phòng Đăng Ký
         </h3>
         <form className="form-cauhinh" onSubmit={handleSubmit}>
           <div className="infor">
@@ -81,15 +86,15 @@ function Formqlm() {
             <input
               type="text"
               id="khuvuc"
-              value={setTgkt}
+              value={tgkt}
               onChange={(e) => setTgkt(e.target.value)}
             />
             <br />
-            <label htmlFor="lp">Mục Đích</label>
+            <label htmlFor="md">Mục Đích</label>
             <br />
             <input
               type="text"
-              id="lp"
+              id="md"
               value={md}
               onChange={(e) => setMd(e.target.value)}
             />
@@ -111,24 +116,18 @@ function Formqlm() {
               <table>
                 <tr>
                   <td>
-                    <select className="chon">
-                      <option selected disabled>
+                    <select className="chon" value={trangthai}
+              onChange={(e) => setTrangthai(e.target.value)}>
+                      <option >
                         Trạng thái hoạt động
                       </option>
-                      <option value="">Đang sử dụng</option>
-                      <option value="">Chưa sử dụng</option>
+                      <option value="1">Đang sử dụng</option>
+                      <option value="0">Chưa sử dụng</option>
                     </select>
                   </td>{' '}
-                </tr>
-                <tr>
-                  <td>
-                    <h3 className=" mt-9"> Ngày Nhập</h3>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <input type="date"></input>
-                  </td>
+              
+                
+                 
                 </tr>
               </table>
             </div>

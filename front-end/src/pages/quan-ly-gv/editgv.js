@@ -41,7 +41,7 @@ function Editgv() {
   return (
     <div>
       <AdminLayout>
-        <h3 className="text-center font-bold text-[2.75rem] py-[1.25rem] mr-20">
+        <h3 className="text-center !text-[#fff] font-bold text-[2.75rem] py-[1.25rem] mr-20">
           Sửa Giáo Viên
         </h3>
         <form className="form-cauhinh" onSubmit={handleSubmit}>
@@ -70,9 +70,7 @@ function Editgv() {
                   value={avt}
                   onChange={(e) => setAvt(e.target.value)}
                 />
-                <br />
-              </div>
-              <div className=" ml-10">
+                <br /><div className="">
                 <label htmlFor="ghichu">Khoa</label>
                 <br />
                 <input
@@ -83,15 +81,17 @@ function Editgv() {
                 />
                 <br />
               </div>
+              
+              </div>
             </div>
           </div>
-          <div className="infor-tb1">
+          <div className="infor1">
             <h2>Xuất Dữ Liệu</h2>
             <div className=" flex justify-center">
-              <button className="luu">
+              <button className="luu" type="submit">
                 <AddTaskIcon className=" mr-1" />
                 Lưu Dữ Liệu
-              </button>
+              </button><br/>
               <button className="reset" type="reset">
                 <RestartAltIcon className=" mr-1" />
                 Reset

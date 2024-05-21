@@ -4,6 +4,8 @@
   padding-bottom: 20px;
   padding-left: 60px;
   padding-right: 40px;
+  color: #ffff;
+
 }
 
 .table-cauhinh table th {
@@ -11,12 +13,14 @@
   padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
+  color: #ffff;
 }
 
 .form-cauhinh {
-  width: 1550px;
+  width: 1650px;
   height: 700px;
-  background: linear-gradient(35deg, #8290a2, #98a8b9);
+  background: linear-gradient(35deg, #898892, #514e61);
+
   display: flex;
   padding: 20px 30px;
   border-radius: 10px;
@@ -36,53 +40,42 @@
 }
 
 .infor input {
-  width: 800px;
+  width: 600px;
   margin: 10px 0;
   outline: none;
   padding: 5px 10px;
   background: transparent;
   border: 2px solid #ccc;
+  transition: .5s;
+  color: #fff;
 
 }
 
 .infor input:focus {
-  transition: 0.5s;
-  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
-  color: #000;
-  background: transparent;
-  border: none;
+  width: 700px;
+  margin: 10px 0;
   outline: none;
-  padding-left: 20px;
+  padding: 5px 10px;
+  background: transparent;
+  border: 2px solid #ccc;
+  transition: .5s;
+  color: #fff;
+  padding-left: 30px;
 }
 
 .infor label {
   font-size: 20px;
   font-weight: 500;
+  color: #fff;
+  cursor: pointer;
 }
 
-.text-tarea {
-  background: transparent;
-  height: 300px;
-  width: 800px;
-  border: 2px solid #ccc;
-  outline: none;
 
-}
-
-.text-tarea:focus {
-  transition: 0.5s;
-  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
-
-  color: #000;
-  background: transparent;
-  border: none;
-  outline: none;
-  padding-left: 20px;
-}
 
 .table-cauhinh {
-  background: linear-gradient(35deg, #8290a2, #98a8b9);
-  margin: 30px 20px;
+  background: linear-gradient(35deg, #898892, #514e61);
+  margin-top: 100px;
+  margin-left: 20px;
   padding: 30px 30px;
   border-radius: 10px;
   border: 2px solid #cbcaca;
@@ -103,20 +96,26 @@
   background: linear-gradient(35deg, #1212d1, #10de32);
   margin: 20px;
   border-radius: 10px;
-  font-weight: 400;
+  color: #fff;
+  font-weight: 600;
+  float: right;
+  transition: .5s;
+
 
 }
 
 .form-tao:hover {
   background: linear-gradient(35deg, #9b07e5, #09c2ec);
-
+  transition: .5s;
   color: #feffff;
-  font-weight: 700;
+
+  padding: 0 20px;
+  transform: translateX(-30px);
 
 }
 
 .infor1 {
-  width: 620px;
+  width: 750px;
   border: 2px solid #ccc;
 }
 
@@ -124,8 +123,9 @@
   padding: 10px 20px;
   font-size: 20px;
   border-bottom: 1px solid #e6dbdb;
-  font-weight: 600;
-  color: #0520a4;
+  font-weight: 700;
+  color: #0d1d6f;
+  letter-spacing: 5px;
 }
 
 .infor1 button {
@@ -137,27 +137,38 @@
 }
 
 .infor1 .luu {
-  background: linear-gradient(35deg, #21bb95, #07e312);
-  font-weight: 500;
+  background: linear-gradient(35deg, #25a686, #06e777);
+    font-weight: 500;
+    transition: .5s;
+    position: relative;
+    color: #fff;
 }
 
-.infor1 .luu:hover {
-  background: linear-gradient(35deg, #0be7b0, #0a31df);
-  color: #fff;
+.form-cauhinh .luu:hover {
+  background: linear-gradient(35deg, #1cd5a7, #03e740);
+  color: #000;
   font-family: 700;
+  transition: .5s;
+  padding: 10px 40px;
+  
 
 }
 
 .infor1 .reset {
   background: linear-gradient(35deg, #e11b1b, #d50c8f);
-
   font-weight: 500;
+  transition: .5s;
+  color: #fff;
+  padding: 0 30px;
 }
 
 .infor1 .reset:hover {
-  color: #fff;
-  font-family: 700;
-  background: linear-gradient(35deg, #e70808, #e206f6);
+  color: #000;
+    font-family: 700;
+    background: linear-gradient(35deg, #e70808, #e206f6);
+    transition: .5s;
+    padding: 10px 50px;
+   
 
 
 }
@@ -166,25 +177,36 @@
   margin: 20px;
   font-size: 20px;
   font-weight: 500;
+  color: #fff;
+
+}
+.infor1 label:focus {
+  margin: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
 
 }
 
 .infor1 input {
-  width: 350px;
+  width: 300px;
   margin: 10px 20px;
   outline: none;
   padding: 5px 10px;
   background: transparent;
   border: 2px solid #ccc;
+  color: #fff;
+  transition: 0.5s;
+  
 
 }
 
 .infor1 input:focus {
   transition: 0.5s;
-  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
-  color: #000;
+  border: 2px solid #ccc;
+  width: 350px;
+  color: #fff;
   background: transparent;
-  border: none;
   outline: none;
   padding-left: 20px;
 }

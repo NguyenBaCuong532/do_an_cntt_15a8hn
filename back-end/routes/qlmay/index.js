@@ -13,6 +13,8 @@ router.get("/", function (request, response) {
         id: dky_phong.id,
         ngdk: dky_phong.ngdky,
         maydk: dky_phong.maydky,
+        tgbd: dky_phong.tg_bd,
+        tgkt: dky_phong.tg_kt,
         trangthai:dky_phong.trang_thai,
       };
     });
@@ -26,10 +28,11 @@ router.patch("/:id", function (request, response) {
     let tgbd = request.body.tgbd;
     let tgkt = request.body.tgkt;
     let md = request.body.md;
-   
+    let trangthai = request.body.trangthai;
 
+  
     database.query(
-      `UPDATE dky_phong SET ngdky = "${ngdk}", maydky = "${maydk}", tg_bd = "${tgbd}", tg_kt = "${tgkt}", muc_dich = "${md}",, trang_thai = "${trangthai}" WHERE id =${id}`,
+      `UPDATE dky_phong SET ngdky = "${ngdk}", maydky = "${maydk}", tg_bd = "${tgbd}", tg_kt = "${tgkt}", muc_dich = "${md}", trang_thai = ${trangthai} WHERE id =${id}`,
       [],
       function (error, result) {
         if (error) throw error;

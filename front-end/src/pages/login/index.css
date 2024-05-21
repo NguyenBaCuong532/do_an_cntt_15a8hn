@@ -52,8 +52,8 @@ h1 {
   color: #ffffff;
   text-shadow: -6px 8px 7px #151114;
 }
-form input[type="password"],
-form input[type="text"] {
+.content input[type="password"],
+.content input[type="text"] {
   width: 270px;
   height: 50px;
   border: 2px solid #adb3c2;
@@ -70,8 +70,8 @@ form input[type="text"] {
   position: absolute;
   right: 10px;
 }
-form input[type="password"]:focus,
-form input[type="text"]:focus {
+.content input[type="password"]:focus,
+.content input[type="text"]:focus {
   border-left: 30px solid #ccc;
   box-shadow: 0 0 30px 0 rgb(251, 248, 248);
   width: 310px;

@@ -3,7 +3,11 @@
   padding: 0px 30px;
   border: 2px solid #888;
   margin: 28px 20px;
-  background: linear-gradient(35deg, #8290a2, #98a8b9);
+  background: linear-gradient(35deg, #898892, #514e61);
+  color: #050f5b;
+  letter-spacing: 2px;
+  
+
 }
 
 .table-searchls .searchls-nhap {
@@ -13,6 +17,9 @@
   outline: none;
   background: transparent;
   border: 2px solid #cbcaca;
+  color: #fff;
+  transition: .5s;
+
 }
 
 .table-searchls .search-check {
@@ -22,24 +29,27 @@
 }
 
 .table-searchls label {
-  color: #000;
+  color: #fff;
+
   font-weight: 500;
 }
 
 .table-searchls .searchls-nhap:focus {
   transition: 0.5s;
-  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
-  color: #000;
+  border: 2px solid #cbcaca;
+  color: #fff;
   background: transparent;
-  border: none;
   outline: none;
   padding-left: 30px;
-  color: #000;
   font-weight: 500;
+  padding-left: 20px;
+  transform: translateX(10px);
+  width: 500px;
 }
 
 .table-searchls .searchls-nhap::placeholder {
-  color: #000;
+  color: #fff;
+
   font-weight: 500;
 }
 
@@ -55,24 +65,48 @@
 }
 
 .table-searchls .luu {
-  background: linear-gradient(35deg, #21bb95, #07e312);
+  background: linear-gradient(35deg, #25a686, #06e777);
   font-weight: 500;
+  margin-right: 50px;
+  transition: .5s;
+
+  color: #fff;
 }
 
 .table-searchls .luu:hover {
-  background: linear-gradient(35deg, #0be7b0, #0a31df);
-  color: #fff;
+  background: linear-gradient(35deg, #1cd5a7, #03e740);
+
+  color: #000;
   font-family: 700;
+  transition: .5s;
+  padding: 10px 40px;
 }
 
 .table-searchls .reset {
   background: linear-gradient(35deg, #e11b1b, #d50c8f);
-
   font-weight: 500;
+  transition: .5s;
+  padding: 10px 40px;
+  position: absolute;
+  color: #fff;
 }
 
-.table-searchls .reset:hover {
-  color: #fff;
-  font-family: 700;
-  background: linear-gradient(35deg, #e70808, #e206f6);
+.table-searchls .reset:hover{
+color: #000;
+    background: linear-gradient(35deg, #e70808, #e206f6);
+    transition: .5s;
+    padding: 10px 50px;
+    position: absolute;
+}
+.for1 .reset:hover {
+  color: #000;
+    font-family: 700;
+    background: linear-gradient(35deg, #e70808, #e206f6);
+    transition: .5s;
+    padding: 10px 50px;
+    position: absolute;
+}
+.infor-tb2{
+  border: 2px solid #cbcaca;
+
 }

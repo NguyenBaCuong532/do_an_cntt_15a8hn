@@ -1,20 +1,21 @@
 .table-search {
   border-radius: 10px;
   padding: 0px 30px;
-  border: 2px solid #888;
+  border: 2px solid #b8b7b7;
   margin: 28px 20px;
-  background: linear-gradient(35deg, #8290a2, #98a8b9);
+  background: linear-gradient(35deg, #898892, #514e61);
+
 
 }
 
 .form-search {
   border-bottom: 2px solid #cbcaca;
-  color: #0923e8;
+  color: #170853;
+  letter-spacing: 3px;
 
 }
 
-.table-search input,
-.table-search select {
+.table-user input{
   width: 400px;
   padding: 7px 20px;
   border-radius: 10px;
@@ -22,57 +23,77 @@
   background: transparent;
   border: 2px solid #cbcaca;
 
-
+}
+.table-user .chon {
+background: transparent;  
+width: 400px;
+padding: 7px 20px;
+border-radius: 10px;
+outline: none;
+border: 2px solid #cbcaca;
 
 }
 
-.table-search input:focus {
+.infor1 input:focus {
   transition: 0.5s;
-  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
-  color: #000;
+  border-bottom: 2px solid #cbcaca;
+  color: #fff;
   background: transparent;
-  border: none;
   outline: none;
   padding-left: 30px;
-  color: #000;
-  font-weight: 500;
+  font-weight: 400;
 
 }
 
-.table-search select:hover,
-.infor1 select:hover {
 
-  box-shadow: 0 0 10px 0 rgb(234, 238, 238);
-  color: #000;
-  background: transparent;
-  border: none;
+.table-user .chon:hover{
+ 
+  color: #fff;
   outline: none;
   padding-left: 30px;
-  color: #000;
-  font-weight: 500;
+  transition: .5s;
+
 }
 
-.table-search input::placeholder {
-  color: #000;
-  font-weight: 500;
+.table-user input::placeholder {
+  color: #ffff;
+  font-weight: 400;
+
 }
 
-.table-search select,
-.infor1 select {
+.table-user .chon {
   outline: none;
   border: 2px solid #cbcaca;
   margin-left: -1px;
-  color: #000;
+  color: #fff;
   font-weight: 500;
-  background: none;
+  background: rgba(143, 144, 144,.2);
+  transition: .5s;
+
+}
+.table-user .chon option.table-user1 .chon option {
+  outline: none;
+  border: 2px solid #cbcaca;
+  margin-left: -1px;
+  color: #454343;
+  font-weight: 500;
+  background: rgba(14, 14, 14, 0.2);
+  transition: .5s;
+
+  
+
 }
 
-.table-search .select::after {
+
+.table-user select:focus,.table-user1 .chon:focus {
   cursor: pointer;
-  background: transparent;
+  background: rgba(95, 97, 97, 0.2);
+  color: #454343;
+
+  transition: .5s;
 }
 
-.table-search button {
+.table-user button {
   padding: 10px 20px;
   margin: 20px 30px;
   border-radius: 10px;
@@ -80,25 +101,25 @@
 
 }
 
-.table-search .luu {
+.table-user .luu {
   background: linear-gradient(35deg, #21bb95, #07e312);
   font-weight: 500;
 }
 
-.table-search .luu:hover {
+.table-user .luu:hover {
   background: linear-gradient(35deg, #0be7b0, #0a31df);
   color: #fff;
   font-family: 700;
 
 }
 
-.table-search .reset {
+.table-user .reset {
   background: linear-gradient(35deg, #e11b1b, #d50c8f);
 
   font-weight: 500;
 }
 
-.table-search .reset:hover {
+.table-user .reset:hover {
   color: #fff;
   font-family: 700;
   background: linear-gradient(35deg, #e70808, #e206f6);
@@ -110,7 +131,6 @@
   width: 100%;
   height: 260px;
   font-size: 30px;
-
   flex: 1;
 }
 
@@ -138,10 +158,29 @@
   padding: 7px 30px;
   border-radius: 10px;
   outline: none;
-  background: transparent;
   border: 2px solid #cbcaca;
   margin-left: 40px;
+  transition: .5s;
 
+}
+.infor1 select:focus{
+  transition: .5s;
+color: #3e3c3c;
+  background: rgba(rgb(158, 156, 156), rgb(99, 101, 99), rgb(93, 93, 93), .3);
+}
+.infor1 select:hover{
+  transition: .5s;
+  padding-left: 40px;
+ 
 
-
+  
+}
+.table-user1 .chon{
+  background: transparent;  
+  width: 400px;
+  padding: 7px 20px;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid #cbcaca;
+  margin-top: 30px;
 }

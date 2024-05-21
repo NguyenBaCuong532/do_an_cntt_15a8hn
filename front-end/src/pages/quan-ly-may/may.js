@@ -20,7 +20,7 @@ export const May = ({ cpt,getData }) => {
                
       >
         <ComputerIcon className=" !w-20 !h-20 " />
-        <p className=" font-bold">{cpt.trangthai?cpt.maydk+"(ON)":cpt.maydk+"(OFF)"}</p>
+        <p className=" font-bold mb-1">{cpt.trangthai?cpt.maydk+"(ON)":cpt.maydk+"(OFF)"}</p>
         <button>
           <Link to={`/quanlimay/${cpt.id}`}>
             <BorderColorIcon className=" bg-gradient-to-r from-yellow-500 to-yellow-700 !w-8 !h-8 py-1 rounded-lg" />

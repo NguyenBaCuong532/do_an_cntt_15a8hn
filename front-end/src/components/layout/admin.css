@@ -1,14 +1,14 @@
-.admin-container {
-  background: linear-gradient(35deg, #a1c3e8, #9a9ea2);
 
-}
 
 .side-nav h2 {
   font-size: 30px;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
   padding: 15px;
-  border-bottom: 3px solid #0951ae;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(198, 208, 218, 0.3);
+  text-shadow: 0px 0px 15px #15077f
+
 }
 
 li {
@@ -18,24 +18,30 @@ li {
   display: flex;
   align-items: center;
   flex-direction: row;
+transition: .5s;
 }
 
 li:hover {
-  background: linear-gradient(35deg, #4752a9, #6cc1db);
+  background: linear-gradient(35deg, #47475f, #2c2f5e);
   cursor: pointer;
+  transform: translateY(-5px);
+  
 }
 
 .side-nav a:hover {
-  color: #fff;
+  font-size: 22px;
   font-weight: 500;
+transition: .5s;
+
 }
 
 nav {
   width: max-content;
   min-width: 350px;
   height: 100vh;
-  border-right: 5px solid #351663;
-  border-top: 2px solid #090909;
+  border-right: 2px solid rgba(198, 208, 218, 0.3);
+
+border-radius: 10px;
 }
 
 nav ul {
@@ -48,6 +54,8 @@ nav ul {
   text-decoration: none;
   padding: 10px;
   color: #fff;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
 .admin-container {
@@ -58,4 +66,6 @@ nav ul {
 
 main {
   width: 100%;
+  background: linear-gradient(250.59deg,#322c38 0%,#514e61 28.53%, #1c2137 75.52%);
+
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
+import AddTaskIcon from '@mui/icons-material/AddTask';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import AdminLayout from '../../components/layout/adminlayout';
 import './index.css';
 import { Lichsu } from './lichsu';
@@ -30,8 +31,8 @@ const Quanlygiaovien = (gv) => {
   return (
     <AdminLayout>
       <div className="lssd-container ">
-        <p className="text-center font-bold text-[2.75rem] py-[1.25rem]">
-          Danh Sách Giao Viên
+        <p className="text-center !text-[#fff] font-bold text-[2.75rem] py-[1.25rem]">
+          Danh Sách Giáo Viên
         </p>
         <form
           className="table-searchls flex flex-col gap-2"
@@ -58,8 +59,8 @@ const Quanlygiaovien = (gv) => {
             <tr>
               <td>
                 <div>
-                  <button className="luu">Tìm Kiếm</button>
-                  <button className="reset">Reset</button>
+                  <button className="luu"><AddTaskIcon className=' mr-1'/>Tìm Kiếm</button>
+                  <button className="reset"><RestartAltIcon className=' mr-1'/>Reset</button>
                 </div>
               </td>
             </tr>

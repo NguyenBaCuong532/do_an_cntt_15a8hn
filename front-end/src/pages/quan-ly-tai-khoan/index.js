@@ -37,9 +37,9 @@ const QuanLyTaiKhoan = (user) => {
   return (
     <AdminLayout>
       <div className="qlpm-container">
-        <p className="text-center font-bold text-[2.75rem] py-[1.25rem]">
+        <h3 className="text-center !text-[#fff] font-bold text-[2.75rem] py-[1.25rem]">
           Quản Lý Tài Khoản
-        </p>
+        </h3>
         <form
           className="table-user flex flex-col gap-2"
           onSubmit={handleSubmit}
@@ -60,7 +60,7 @@ const QuanLyTaiKhoan = (user) => {
               </td>
               <td>
                 <input
-                  className="user-ht mr-80"
+                  className="user-ht mr-[9px]"
                   type="text"
                   placeholder="Tìm Kiếm Theo Email"
                   value={email}
