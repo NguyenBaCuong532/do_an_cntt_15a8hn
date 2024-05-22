@@ -7,7 +7,6 @@ import Quanlytaikhoan from "./pages/quan-ly-tai-khoan";
 import Quanlycauhinh from "./pages/quan-ly-cau-hinh";
 import Quanlythietbi from "./pages/quan-ly-thiet-bi";
 import Quanlygiaovien from "./pages/quan-ly-gv";
-
 import Formtao from "./pages/quan-ly-cau-hinh/formtao";
 import Formtaotb from "./pages/quan-ly-thiet-bi/formtaotb";
 import Formtaopm from "./pages/quan-ly-phong-may/formtaopm";
@@ -20,13 +19,15 @@ import Themuser from "./pages/quan-ly-tai-khoan/themuser";
 import Editch from "./pages/quan-ly-cau-hinh/editch";
 import Editgv from "./pages/quan-ly-gv/editgv";
 import Themmay from "./pages/quan-ly-may/themmay";
+import Message from "./components/layout/message";
 
 
 
 function App() {
   return (
     <div className="App">
-      <Routes>
+  
+       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/quanlitaikhoan" element={<Quanlytaikhoan />} />
