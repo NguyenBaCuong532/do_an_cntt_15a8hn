@@ -71,5 +71,19 @@ router.get("/:id", function (request, response) {
     }
   );
 });
-
+router.post("/create", function (request, response) {
+  let tengv = request.body.tengv;
+  let magv = request.body.magv;
+  let avt = request.body.avt;
+  let khoa = request.body.khoa;
+  database.query(
+    `INSERT INTO giao_vien ( ten_giao_vien, ma_giao_vien, avatar, khoa) VALUES ("${tengv}", "${magv}", "${avt}", "${khoa}")`,
+    [],
+    function (error, result) {
+      if (error) throw error;
+      console.log(result);
+      response.end();
+    }
+  );
+});
   module.exports = router;

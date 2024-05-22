@@ -20,7 +20,7 @@ const QuanLyTaiKhoan = (user) => {
   function handleSubmit(event) {
     event.preventDefault();
     axios
-      .get('http://localhost:4000/user', { params: { fullname, email } })
+      .get('http://localhost:4000/user', { params: { fullname, email ,khoa} })
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }
@@ -34,7 +34,11 @@ const QuanLyTaiKhoan = (user) => {
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }
+ 
   return (
+
+
+   
     <AdminLayout>
       <div className="qlpm-container">
         <h3 className="text-center !text-[#fff] font-bold text-[2.75rem] py-[1.25rem]">
@@ -96,7 +100,9 @@ const QuanLyTaiKhoan = (user) => {
           })}
         </div>
       </div>
+    
     </AdminLayout>
+   
   );
 };
 

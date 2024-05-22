@@ -19,7 +19,7 @@ import Themuser from "./pages/quan-ly-tai-khoan/themuser";
 import Editch from "./pages/quan-ly-cau-hinh/editch";
 import Editgv from "./pages/quan-ly-gv/editgv";
 import Themmay from "./pages/quan-ly-may/themmay";
-import Message from "./components/layout/message";
+import ThemGv from "./pages/quan-ly-gv/themgv";
 
 
 
@@ -56,10 +56,13 @@ function App() {
 
 
         <Route path="/quanligiaovien" element={<Quanlygiaovien />} />
-        <Route path="/quanligiaovien/:id" element={<Editgv />} />
+        <Route path="/quanligiaovien" element={<Quanlygiaovien />} />
+
+        <Route path="/quanligiaovien/themgv" element={<ThemGv />} />
 
 
         <Route path="/formtao" element={<Formtao />} />
+
       </Routes>
     </div>
   );

@@ -5,10 +5,13 @@ import AdminLayout from '../../components/layout/adminlayout';
 import './index.css';
 import { Lichsu } from './lichsu';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import AddIcon from '@mui/icons-material/Add';
+
+
 
 const Quanlygiaovien = (gv) => {
   const [search, setSearch] = useState('');
-
   const [data, setData] = useState([]);
 
   function handleSubmit(event) {
@@ -66,7 +69,13 @@ const Quanlygiaovien = (gv) => {
             </tr>
           </table>
         </form>
-        <div className="table-cauhinh">
+        <button className="form-tao !ml-[60px]">
+          <Link to={`/quanligiaovien/themgv`}>
+            <AddIcon className="!text-[#edf0ed] !w-7 !h-7 mr-1 mb-1" />
+            Tạo Mới
+          </Link>
+        </button>
+        <div className="table-cauhinh !mt-[120px]">
           <table>
             <tr>
               <th>STT</th>
@@ -80,6 +89,7 @@ const Quanlygiaovien = (gv) => {
               return <Lichsu key={index} gv={gv} getData={getData}/>;
             })}
           </table>
+         
         </div>
       </div>
     </AdminLayout>

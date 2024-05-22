@@ -6,6 +6,7 @@ router.get("/", function (request, response) {
   const query = request.query;
   let email = query.email;
   let fullname = query.fullname;
+  let khoa = query.khoa;
 
 
   let sql = "SELECT * FROM user";
@@ -15,6 +16,9 @@ router.get("/", function (request, response) {
   }
   if (fullname) {
     whereSql.push(`user.fullname LIKE '%${fullname}%'`);
+  } 
+  if (khoa) {
+    whereSql.push(`user.khoa LIKE '%${khoa}%'`);
   }
 
 
@@ -30,6 +34,8 @@ router.get("/", function (request, response) {
         id: user.id,
         email: user.email,
         fullname: user.fullname,
+        khoa: user.khoa,
+
        
        
       };

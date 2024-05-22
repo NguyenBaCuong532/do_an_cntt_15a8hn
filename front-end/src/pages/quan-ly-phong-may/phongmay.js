@@ -1,18 +1,23 @@
 import React from 'react';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './index.css';
+
+
 export const Phongmay = ({item,getData}) => {
  function xoaPhongmay(){
   axios.delete(`http://localhost:4000/phongmay/delete/${item.id}`)
   .then((res)=>getData())
   .catch((err)=>console.log(err))
  }
-
   return (
+
+
+   
       <tr>
         <td>{item.id}</td>
         <td>{item.maphong}</td>
@@ -30,7 +35,10 @@ export const Phongmay = ({item,getData}) => {
           <button onClick={xoaPhongmay}>
             <DeleteForeverIcon  className=" ml-5 bg-gradient-to-r from-red-700 to-red-500 rounded-lg !w-8 !h-8 py-1 text-[#ffffff] " />
           </button>
+         
         </td>
-      </tr>
+      </tr> 
+     
+      
   );
 };

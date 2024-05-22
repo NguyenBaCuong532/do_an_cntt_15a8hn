@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
@@ -8,6 +8,10 @@ import LockIcon from "@mui/icons-material/Lock";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+const [permision, setPermision] = useState('');
+ 
+  const [data, setData] = useState([]);
+
   const navigate = useNavigate();
   function handleSubmit(event) {
     event.preventDefault();
@@ -23,7 +27,14 @@ function Login() {
         }
       })
       .catch((err) => console.log(err));
+  
+
+
+    
   }
+
+  
+  
   return (
     <div className="content">
       <h1 className="font-bold ">Quản Lí Phòng Máy Tính</h1>

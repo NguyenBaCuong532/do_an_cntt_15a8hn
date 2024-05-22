@@ -54,7 +54,7 @@ const QuanLyMay = (cpt) => {
           </h2>
           <table>
             <div className="infor-tb1 mb-5 ">
-              <button className="luu">
+              <button className="luu" >
                 <AddTaskIcon className=" mr-1" />
                 Đã Đăng Ký
               </button>

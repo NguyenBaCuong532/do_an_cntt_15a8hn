@@ -40,8 +40,11 @@ function AdminLayout(props) {
             <Link to="/quanligiaovien">Quản Lý Giáo Viên</Link>
           </li>
         </ul>
-      </nav>
-      <main className=" pl-[350px] min-h-[100vh]">{props.children}</main>
+      
+      </nav> 
+      <main className=" pl-[350px] min-h-[100vh]">{props.children}
+      
+      </main>
     </div>
   );
 }

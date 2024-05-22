@@ -4,7 +4,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import AdminLayout from '../../components/layout/adminlayout';
 import './index.css';
-function Themuser() {
+import Alert from '@mui/material/Alert';
+function Themuser(user) {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -30,6 +31,7 @@ function Themuser() {
 
   return (
     <div>
+      
       <AdminLayout>
         <h3 className="text-center text-[#fff] font-bold text-[2.75rem] py-[1.25rem]">
           Thêm Tài Khoản
@@ -91,6 +93,7 @@ function Themuser() {
                 Reset
               </button>
             </div>
+           
            
           </div>
         </form>

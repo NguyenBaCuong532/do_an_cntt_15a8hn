@@ -3,9 +3,6 @@ const database = require("../../database");
 const router = express.Router();
 
 router.get("/", function (request, response) {
-  const query = request.query;
-
-
   database.query('SELECT * FROM dky_phong ', [], function (error, results) {
     if (error) throw error;
     const result = results.map((dky_phong) => {
@@ -16,6 +13,8 @@ router.get("/", function (request, response) {
         tgbd: dky_phong.tg_bd,
         tgkt: dky_phong.tg_kt,
         trangthai:dky_phong.trang_thai,
+        md:dky_phong.muc_dich,
+
       };
     });
     return response.json(result);
