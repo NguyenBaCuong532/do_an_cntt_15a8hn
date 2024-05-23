@@ -9,6 +9,8 @@ import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import FindReplaceIcon from '@mui/icons-material/FindReplace';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 function AdminLayout(props) {
+  
+  
   return (
     <div className="admin-container ">
       <nav className="side-nav fixed" >
@@ -40,11 +42,11 @@ function AdminLayout(props) {
             <Link to="/quanligiaovien">Quản Lý Giáo Viên</Link>
           </li>
         </ul>
-       <button onClick={()=>{
-        localStorage.removeItem('token')
-       }}>
-        LogOut
-       </button>
+     <button className=" mt-20 ml-20"   onClick={()=>{
+        localStorage.removeItem('admin')
+       }}> 
+        <Link to='/'>Logout</Link>
+       </button> 
       </nav> 
       <main className=" pl-[350px] min-h-[100vh]">{props.children}
       

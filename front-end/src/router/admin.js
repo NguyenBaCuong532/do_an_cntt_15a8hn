@@ -19,8 +19,8 @@ const navigate=useNavigate()
       .catch((err) => console.log(err));
   }
 useEffect(()=>{
-  if(!localStorage.getItem('token')){
-       navigate('/login')
+  if(!localStorage.getItem('admin')){
+       navigate('/')
   }
 },[])
  

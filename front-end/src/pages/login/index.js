@@ -18,13 +18,13 @@ const [permision, setPermision] = useState('');
       .post("http://localhost:4000/auth", { username, password })
       .then(res => {
         console.log(res);
-       // if (res.data == "Success") {
+        if (res.data == "Success") {
           navigate("/admin");
-          localStorage.setItem('token',res.data.token)
-        // } else {
-        //   console.log(res);
-        //   alert("Thông Tin Tài Khoản Hoặc Mật Khẩu Ko Chính Xác");
-        // }
+          localStorage.setItem('admin',res.data)
+        } else {
+          console.log(res);
+          alert("Thông Tin Tài Khoản Hoặc Mật Khẩu Ko Chính Xác");
+        }
       })
       .catch((err) => console.log(err));
   
