@@ -40,7 +40,11 @@ function AdminLayout(props) {
             <Link to="/quanligiaovien">Quản Lý Giáo Viên</Link>
           </li>
         </ul>
-      
+       <button onClick={()=>{
+        localStorage.removeItem('token')
+       }}>
+        LogOut
+       </button>
       </nav> 
       <main className=" pl-[350px] min-h-[100vh]">{props.children}
       

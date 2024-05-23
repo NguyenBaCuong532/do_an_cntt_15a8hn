@@ -9,7 +9,6 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 const [permision, setPermision] = useState('');
- 
   const [data, setData] = useState([]);
 
   const navigate = useNavigate();
@@ -17,14 +16,15 @@ const [permision, setPermision] = useState('');
     event.preventDefault();
     axios
       .post("http://localhost:4000/auth", { username, password })
-      .then((res) => {
+      .then(res => {
         console.log(res);
-        if (res.data == "Success") {
+       // if (res.data == "Success") {
           navigate("/admin");
-        } else {
-          console.log(res);
-          alert("Thông Tin Tài Khoản Hoặc Mật Khẩu Ko Chính Xác");
-        }
+          localStorage.setItem('token',res.data.token)
+        // } else {
+        //   console.log(res);
+        //   alert("Thông Tin Tài Khoản Hoặc Mật Khẩu Ko Chính Xác");
+        // }
       })
       .catch((err) => console.log(err));
   
@@ -32,6 +32,7 @@ const [permision, setPermision] = useState('');
 
     
   }
+  
 
   
   
