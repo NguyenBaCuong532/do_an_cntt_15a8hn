@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import AdminLayout from '../../components/layout/adminlayout';
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import './index.css';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-function Editgv() {
+import AdminLayout from '../../components/layout/adminlayout';
+import './index.css';
+export const Editgv = () => {
   const [magv, setMagv] = useState('');
   const [tengv, setTengv] = useState('');
   const [avt, setAvt] = useState('');
@@ -70,18 +70,18 @@ function Editgv() {
                   value={avt}
                   onChange={(e) => setAvt(e.target.value)}
                 />
-                <br /><div className="">
-                <label htmlFor="ghichu">Khoa</label>
                 <br />
-                <input
-                  type="text"
-                  id="ma-hdh"
-                  value={khoa}
-                  onChange={(e) => setKhoa(e.target.value)}
-                />
-                <br />
-              </div>
-              
+                <div className="">
+                  <label htmlFor="ghichu">Khoa</label>
+                  <br />
+                  <input
+                    type="text"
+                    id="ma-hdh"
+                    value={khoa}
+                    onChange={(e) => setKhoa(e.target.value)}
+                  />
+                  <br />
+                </div>
               </div>
             </div>
           </div>
@@ -91,7 +91,8 @@ function Editgv() {
               <button className="luu" type="submit">
                 <AddTaskIcon className=" mr-1" />
                 Lưu Dữ Liệu
-              </button><br/>
+              </button>
+              <br />
               <button className="reset" type="reset">
                 <RestartAltIcon className=" mr-1" />
                 Reset
@@ -102,6 +103,4 @@ function Editgv() {
       </AdminLayout>
     </div>
   );
-}
-
-export default Editgv;
+};

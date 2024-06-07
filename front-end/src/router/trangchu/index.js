@@ -1,8 +1,8 @@
 import React from 'react';
 import './index.css';
 
-import Booking from '../booking/booking';
-function Trangchu() {
+import {Booking} from '../booking';
+export const Trangchu =()=> {
   return (
     <Booking>
       <div>
@@ -11,4 +11,4 @@ function Trangchu() {
     </Booking>
   );
 }
-export default Trangchu;
+

@@ -12,16 +12,21 @@ const lichsuRoutes = require('./routes/lichsutk');
 const thietbiRoutes = require('./routes/thietbi');
 const cauhinhRoutes = require('./routes/cauhinh');
 const qldkymayRoutes = require('./routes/qldkymay');
+const bookingRoutes = require('./routes/booking');
+
 
 
 
 app.use('/auth', authRoutes);
-app.use('/user', userRoutes);
-app.use('/phongmay',phongmayRoutes)
-app.use('/lichsutk', lichsuRoutes);
-app.use('/thietbi', thietbiRoutes);
+// app.use('/user', userRoutes);
+// app.use('/phongmay',phongmayRoutes)
+// app.use('/lichsutk', lichsuRoutes);
+// app.use('/thietbi', thietbiRoutes);
 app.use('/cauhinh', cauhinhRoutes);
 app.use('/qldkymay', qldkymayRoutes);
+
+
+
 
 
 

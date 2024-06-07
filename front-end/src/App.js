@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
-import Adminbooking from './router/adminbooking';
-import PrivateRoutes from './router/privateroute';
 function App() {
   const [account,setAccount]=useState({});
   useEffect(()=>{

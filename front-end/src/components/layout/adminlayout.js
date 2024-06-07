@@ -9,14 +9,7 @@ import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import FindReplaceIcon from '@mui/icons-material/FindReplace';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 function AdminLayout(props) {
-  const navigate = useNavigate();
 
-  useEffect(()=>{
-    let session = sessionStorage.getItem('account');
-    if(!session){
-      navigate('/login');
-    }
-  },[])
   return (
     <div className="admin-container ">
       <nav className="side-nav fixed" >

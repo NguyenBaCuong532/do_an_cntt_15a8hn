@@ -1,19 +1,18 @@
-import React, { useState } from "react";
-import AdminLayout from "../../components/layout/adminlayout";
-import AddTaskIcon from "@mui/icons-material/AddTask";
-import RestartAltIcon from "@mui/icons-material/RestartAlt";
-import "./index.css";
-import axios from "axios";
-function Formtao() {
+import AddTaskIcon from '@mui/icons-material/AddTask';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import axios from 'axios';
+import React, { useState } from 'react';
+import AdminLayout from '../../components/layout/adminlayout';
+import './index.css';
+export const Formtao = () => {
   const [mach, setMach] = useState('');
-    const [loaimay, setLoaimay] = useState('');
-    const [hdh, setHdh] = useState('');
-    const [cpu, setCpu] = useState('');
-    const [ram, setRam] = useState('');
-    const [oc, setOc] = useState('');
-    const [vga, setVga] = useState('');
-    const [ghichu, setGhichu] = useState([]);
-  
+  const [loaimay, setLoaimay] = useState('');
+  const [hdh, setHdh] = useState('');
+  const [cpu, setCpu] = useState('');
+  const [ram, setRam] = useState('');
+  const [oc, setOc] = useState('');
+  const [vga, setVga] = useState('');
+  const [ghichu, setGhichu] = useState([]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -43,19 +42,28 @@ function Formtao() {
           <div className="infor">
             <label htmlFor="ma-cauhinh">Mã Cấu Hình</label>
             <br />
-            <input type="text" id="ma-cauhinh"
-            onChange={(e)=>setMach(e.target.value)}
+            <input
+              type="text"
+              id="ma-cauhinh"
+              onChange={(e) => setMach(e.target.value)}
             />
             <br />
             <label htmlFor="ma-lm">Loại Máy</label>
             <br />
-            <input type="text" id="ma-lm" onChange={(e)=>setLoaimay(e.target.value)}/>
+            <input
+              type="text"
+              id="ma-lm"
+              onChange={(e) => setLoaimay(e.target.value)}
+            />
             <br />
             <label htmlFor="ma-hdh">Hệ Điều Hành</label>
             <br />
-            <input type="text" id="ma-hdh" onChange={(e)=>setHdh(e.target.value)}/>
+            <input
+              type="text"
+              id="ma-hdh"
+              onChange={(e) => setHdh(e.target.value)}
+            />
             <br />
-            
           </div>
           <div className="infor1">
             <h2>Xuất Dữ Liệu</h2>
@@ -72,19 +80,19 @@ function Formtao() {
             <div>
               <label>CPU</label>
               <br />
-              <input onChange={(e)=>setCpu(e.target.value)}/>
+              <input onChange={(e) => setCpu(e.target.value)} />
               <br />
               <label>RAM</label>
               <br />
-              <input onChange={(e)=>setRam(e.target.value)}/>
+              <input onChange={(e) => setRam(e.target.value)} />
               <br />
               <label>Ổ Cứng</label>
               <br />
-              <input  onChange={(e)=>setOc(e.target.value)}/>
+              <input onChange={(e) => setOc(e.target.value)} />
               <br />
               <label>VGA</label>
               <br />
-              <input onChange={(e)=>setVga(e.target.value)}/>
+              <input onChange={(e) => setVga(e.target.value)} />
               <br />
             </div>
           </div>
@@ -92,6 +100,4 @@ function Formtao() {
       </AdminLayout>
     </div>
   );
-}
-
-export default Formtao;
+};

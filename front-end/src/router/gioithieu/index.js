@@ -1,8 +1,9 @@
 import React from 'react';
 import './index.css';
+import {Booking} from '../booking';
 
-import Booking from '../booking/booking';
-function Gioithieu() {
+
+export const Gioithieu =()=> {
   return (
     <Booking>
       <div className=" gioithieu ml-9">
@@ -214,4 +215,4 @@ function Gioithieu() {
     </Booking>
   );
 }
-export default Gioithieu;
+

@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import AdminLayout from '../../components/layout/adminlayout';
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import './index.css';
-import moment from 'moment';
-import Alert from '@mui/material/Alert';
 import axios from 'axios';
+import moment from 'moment';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-function Formqlm() {
+import AdminLayout from '../../components/layout/adminlayout';
+import './index.css';
+export const Formqlm = () => {
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
   const [tenphong, setTenphong] = useState('');
@@ -17,10 +16,6 @@ function Formqlm() {
   const [monhoc, setMonhoc] = useState('');
   const [id, setId] = useState('');
   const [ngay, setNgay] = useState('');
-
-
-  
-
 
   const param = useParams();
   function handleSubmit(event) {
@@ -54,9 +49,7 @@ function Formqlm() {
         setMonhoc(res.data.tenMH);
         setMaphong(res.data.maphong);
         setId(res.data.ID);
-        setNgay(moment(res.data.ngay).format("YYYY-MM-DD"));
-
-
+        setNgay(moment(res.data.ngay).format('YYYY-MM-DD'));
       })
       .catch((err) => console.log(err));
   }, []);
@@ -64,110 +57,80 @@ function Formqlm() {
     <div>
       <AdminLayout>
         <h3 className="text-center !text-[#fff] font-bold text-[2.75rem] py-[1.25rem]">
-         Sửa Phòng Đăng Ký
+          Sửa Phòng Đăng Ký
         </h3>
-        <form className="form-cauhinh !w-[800px] !ml-[450px] " onSubmit={handleSubmit}>
+        <form
+          className="form-cauhinh !w-[800px] !ml-[450px] "
+          onSubmit={handleSubmit}
+        >
           <div className="infor ">
-            <label htmlFor="mp"> <p>Giáo Viên : {tengv}</p></label>
-            
+            <label htmlFor="mp">
+              {' '}
+              <p>Giáo Viên : {tengv}</p>
+            </label>
             <br />
-            {/* <input
-              type="text"
-              id="mp"
-              value={tengv}
-              disabled
-              onChange={(e) => setTengv(e.target.value)}
-            />
-            <br /> */}
             <label htmlFor="tp">Khoa : {khoa}</label>
             <br />
-            {/* <input
-              type="text"
-              id="tp"
-              value={khoa}
-              disabled
-              onChange={(e) => setKhoa(e.target.value)}
-            /> */}
-            <br /> 
+            <br />
             <label htmlFor="tp">Bộ Môn: {monhoc}</label>
-            {/* <br />
-            <input
-              type="text"
-              id="tp"
-              value={monhoc}
-              disabled
-              onChange={(e) => setMonhoc(e.target.value)}
-            />
-            */}
-             <br /> <br />
-            <label htmlFor="md">Đổi Phòng {tenphong} Sang : <input
-              type="text"
-              id="md "
-              className=' !w-[200px]'
-              value={tenphong}
-              onChange={(e) => setTenphong(e.target.value)}
-            />
-            <br /> </label><br /> 
-
-
-           
-
+            <br /> <br />
+            <label htmlFor="md">
+              Đổi Phòng {tenphong} Sang :{' '}
+              <input
+                type="text"
+                id="md "
+                className=" !w-[200px]"
+                value={tenphong}
+                onChange={(e) => setTenphong(e.target.value)}
+              />
+              <br />{' '}
+            </label>
+            <br />
             <label htmlFor="lp">Ngày</label>
             <br />
             <input
               type="date"
               id="lp"
-           
-
-              className=' !w-[300px]'
+              className=" !w-[300px]"
               value={ngay}
               onChange={(e) => setNgay(e.target.value)}
             />
             <br />
             <label htmlFor="khuvuc">Ca Đặt lịch</label>
             <br />
-            <input className='  !w-[150px]'
-              placeholder='HH:mm:ss'
-
+            <input
+              className="  !w-[150px]"
+              placeholder="HH:mm:ss"
               type="time"
               id="khuvuc"
-              
-
               value={startTime}
               onChange={(e) => setStartTime(e.target.value)}
             />
-            <input className='  !w-[150px]'
-              placeholder='HH:mm:ss'
-
+            <input
+              className="  !w-[150px]"
+              placeholder="HH:mm:ss"
               type="time"
               id="khuvuc"
-              
-
               value={endTime}
               onChange={(e) => setEndTime(e.target.value)}
             />
             <br />
             <br />
             <div className="infor1 !w-[600px]">
-           
-            <div className=" flex justify-center ">
-              <button className="luu">
-                <AddTaskIcon className=" mr-1" />
-                Sửa Dữ Liệu
-              </button>
-              <button className="reset">
-                <RestartAltIcon className=" mr-1" />
-                Reset
-              </button>
+              <div className=" flex justify-center ">
+                <button className="luu">
+                  <AddTaskIcon className=" mr-1" />
+                  Sửa Dữ Liệu
+                </button>
+                <button className="reset">
+                  <RestartAltIcon className=" mr-1" />
+                  Reset
+                </button>
+              </div>
             </div>
-           
           </div>
-          </div>
-         
         </form>
       </AdminLayout>
     </div>
   );
-}
-
-export default Formqlm;
+};

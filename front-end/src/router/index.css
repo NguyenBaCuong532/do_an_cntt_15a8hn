@@ -6,9 +6,10 @@
     color: #ffffff;
     text-shadow: 0px 0px 10px #9003f5;
     margin-top: 200px;
+   
 }
 .tieude1{
-    width: 100%;
+    width: 85%;
     height: 500px;
     background: url(./booking/Screenshot\ 2024-06-06\ 231333.png) ;
     background-size: cover;

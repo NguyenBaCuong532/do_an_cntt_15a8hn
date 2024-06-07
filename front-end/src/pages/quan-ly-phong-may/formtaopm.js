@@ -4,7 +4,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import AdminLayout from '../../components/layout/adminlayout';
 import './index.css';
-function Formtaopm() {
+export const Formtaopm = () => {
   const [maphong, setMaphong] = useState('');
   const [tenphong, setTenphong] = useState('');
   const [loaiphong, setLoaiphong] = useState('');
@@ -53,10 +53,7 @@ function Formtaopm() {
               onChange={(e) => setTenphong(e.target.value)}
             />
             <br />
-          
-        
-          
-            
+
             <label htmlFor="sl">Số Lượng</label>
             <br />
             <input
@@ -65,50 +62,59 @@ function Formtaopm() {
               onChange={(e) => setSoluong(e.target.value)}
             />
             <br />
-            <div className='table-user1'>
+            <div className="table-user1">
               <table>
                 <tr>
-                  <td><select className="chon"  onChange={(e) => setLoaiphong(e.target.value)}>
-                    <option selected disabled>
-                      Chọn loại phòng
-                    </option>
-                    <option value="Phòng cấu hình cao"  >Phòng cấu hình cao</option>
-                    <option value="Phòng cấu hình thường" >Phòng cấu hình thường</option>
-                  </select></td>
-                   <td> <select className="chon"  onChange={(e) => setKhuvuc(e.target.value)}>
-                  <option selected value='Chọn khu vực'>
-                    Chọn khu vực
-                  </option>
-                  <option value="Khu vực 1">Khu vực 1</option>
-                  <option value="Khu vực 2">Khu vực 2</option>
-                  <option value="Khu vực 3">Khu vực 3</option>
-                  <option value="Khu vực 4">Khu vực 4</option>
-                </select></td>
+                  <td>
+                    <select
+                      className="chon"
+                      onChange={(e) => setLoaiphong(e.target.value)}
+                    >
+                      <option selected disabled>
+                        Chọn loại phòng
+                      </option>
+                      <option value="Phòng cấu hình cao">
+                        Phòng cấu hình cao
+                      </option>
+                      <option value="Phòng cấu hình thường">
+                        Phòng cấu hình thường
+                      </option>
+                    </select>
+                  </td>
+                  <td>
+                    {' '}
+                    <select
+                      className="chon"
+                      onChange={(e) => setKhuvuc(e.target.value)}
+                    >
+                      <option selected value="Chọn khu vực">
+                        Chọn khu vực
+                      </option>
+                      <option value="Khu vực 1">Khu vực 1</option>
+                      <option value="Khu vực 2">Khu vực 2</option>
+                      <option value="Khu vực 3">Khu vực 3</option>
+                      <option value="Khu vực 4">Khu vực 4</option>
+                    </select>
+                  </td>
                 </tr>
               </table>
-               
-                  </div>
-            
-           
+            </div>
           </div>
           <div className="infor1">
             <h2>Xuất Dữ Liệu</h2>
             <div className=" flex justify-center">
-              <button className="luu" type='submit'>
+              <button className="luu" type="submit">
                 <AddTaskIcon className=" mr-1" />
                 Lưu Dữ Liệu
               </button>
-              <button className="reset" type='reset'>
+              <button className="reset" type="reset">
                 <RestartAltIcon className=" mr-1" />
                 Reset
               </button>
             </div>
-          
           </div>
         </form>
       </AdminLayout>
     </div>
   );
-}
-
-export default Formtaopm;
+};

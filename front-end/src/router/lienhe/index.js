@@ -2,11 +2,11 @@ import React from 'react';
 import './index.css';
 import { NavLink } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
-import Booking from '../booking/booking';
+import {Booking} from '../booking';
 import HomeIcon from '@mui/icons-material/Home';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
-function Lienhe(props) {
+export const Lienhe =(props)=> {
   return (
     <Booking>
       <div className="lienhe w-[85%]">
@@ -100,4 +100,4 @@ function Lienhe(props) {
     </Booking>
   );
 }
-export default Lienhe;
+

@@ -4,14 +4,12 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import AdminLayout from '../../components/layout/adminlayout';
 import './index.css';
-import Alert from '@mui/material/Alert';
-function Themuser(user) {
+export const Themuser = (user) => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [fullname, setFullname] = useState('');
   const [khoa, setKhoa] = useState('');
-
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -31,7 +29,6 @@ function Themuser(user) {
 
   return (
     <div>
-      
       <AdminLayout>
         <h3 className="text-center text-[#fff] font-bold text-[2.75rem] py-[1.25rem]">
           Thêm Tài Khoản
@@ -87,19 +84,16 @@ function Themuser(user) {
               <button className="luu" type="submit">
                 <AddTaskIcon className=" mr-1" />
                 Lưu Dữ Liệu
-              </button><br/>
+              </button>
+              <br />
               <button className="reset" type="reset">
                 <RestartAltIcon className=" mr-1" />
                 Reset
               </button>
             </div>
-           
-           
           </div>
         </form>
       </AdminLayout>
     </div>
   );
-}
-
-export default Themuser;
+};

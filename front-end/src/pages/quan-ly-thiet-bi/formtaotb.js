@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import AdminLayout from '../../components/layout/adminlayout';
 import AddTaskIcon from '@mui/icons-material/AddTask';
-import SearchIcon from '@mui/icons-material/Search';
+import React, { useState } from 'react';
+import AdminLayout from '../../components/layout/adminlayout';
 
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import './index.css';
 import axios from 'axios';
+import './index.css';
 
-function Formtaotb() {
+export const Formtaotb = () => {
   const [tentb, setTentb] = useState('');
   const [matb, setMatb] = useState('');
   const [soluong, setSoluong] = useState('');
@@ -105,21 +104,19 @@ function Formtaotb() {
           </div>
           <div className="infor-tb1">
             <h2>Xuất Dữ Liệu</h2>
-            <div className=' mt-[90px] ml-[80px]'>
-                  <button className="luu" type="submit">
-                    <AddTaskIcon className=" mr-1" />
-                    Tìm Kiếm
-                  </button>
-                  <button className="reset" type="reset">
-                    <RestartAltIcon />
-                    ReSet
-                  </button>
-                </div>
+            <div className=" mt-[90px] ml-[80px]">
+              <button className="luu" type="submit">
+                <AddTaskIcon className=" mr-1" />
+                Tìm Kiếm
+              </button>
+              <button className="reset" type="reset">
+                <RestartAltIcon />
+                ReSet
+              </button>
+            </div>
           </div>
         </form>
       </AdminLayout>
     </div>
   );
-}
-
-export default Formtaotb;
+};

@@ -2,21 +2,6 @@ const express = require("express");
 const database = require("../../database");
 const router = express.Router();
 
-// router.get("/", function (request, response) {
-//   database.query('SELECT * from user ', [], function (error, results) {
-//     if (error) throw error;
-//     const result = results.map((user) => {
-//       return {
-//         email: user.email,
-//         magv: user.maGV,
-//         tengv: user.tenGV,
-
-//       };
-//     });
-//     return response.json(result);
-//   });
-// });
-
 router.get("/", function (request, response) {
   let tenphong = request.query.tenphong;
   console.log(request.query.tenphong);
@@ -35,11 +20,7 @@ router.get("/", function (request, response) {
     if (error) throw error;
     const result = results.map((booking) => {
       return {
-        // id: booking.id,
-        // tengv: booking.tenGV,
-        // tengv: booking.tenGV,
-        // tenphong: booking.tenphong,
-        // khoa: booking.tenKhoa,
+
         ...booking,
       };
      
@@ -61,15 +42,6 @@ router.patch("/:id", function (request, response) {
 
   console.log(ngay);
   console.log(endTime);
-  // database.query(
-  //   `SET SQL_SAFE_UPDATES = 0`,
-  //   [],
-  //   function (error, result) {
-  //     if (error) throw error;
-  //     response.send("SUCCESS");
-  //     response.end();
-  //   }
-  // );
   database.query(
     ` UPDATE booking INNER JOIN room ON booking.maphong = room.maphong SET booking.startTime =' ${startTime}',  booking.endTime = ' ${endTime}', room.tenphong = '${tenphong}', booking.ngay = '${ngay}' WHERE booking.maphong = "${maphong}";`,
     [],
@@ -126,16 +98,17 @@ router.post("/create", function (request, response) {
   );
 });
 
-//   router.delete("/delete/:id", function (request, response) {
-//     const id = request.params.id;
-//     database.query(
-//       `DELETE FROM dky_phong WHERE id = ${id};`,
-//       [],
-//       function (error, result) {
+  router.delete("/delete/:id", function (request, response) {
+    const ID = request.params.id;
+    console.log(ID)
+    database.query(
+      `DELETE FROM booking WHERE ID = ${ID};`,
+      [],
+      function (error, result) {
 
-//         if (error) throw error;
-//        return response.send("SUCCESS");
-//       }
-//     );
-//   });
+        if (error) throw error;
+       return response.send("SUCCESS");
+      }
+    );
+  });
 module.exports = router;

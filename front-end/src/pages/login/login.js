@@ -1,49 +1,37 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./index.css";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import LockIcon from "@mui/icons-material/Lock";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+import LockIcon from '@mui/icons-material/Lock';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './index.css';
+export const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   function handleSubmit(event) {
     event.preventDefault();
     axios
-      .post("http://localhost:4000/auth", { username, password })
-      .then(res => {
+      .post('http://localhost:4000/auth', { username, password })
+      .then((res) => {
         console.log(res);
-        if (res.data == "Admin") {
-          let data ={
-            isAuthenticated:true,
-            token:'fake token'
+        if (res.data.status && res.data.data) {
+
+          sessionStorage.setItem('account', JSON.stringify(res.data.data));
+          if(res.data.data.permissionID == 2){
+
+            navigate('/quanlitaikhoan');
           }
-          sessionStorage.setItem('account',JSON.stringify(data));
-          navigate("/quanlitaikhoan");
-        } 
-        else if(res.data == "User"){
-          let data ={
-            isAuthenticated:true,
-            token:'fake token'
+          else{
+            console.log(123)
+            navigate('/adminbooking')
           }
-          sessionStorage.setItem('account',JSON.stringify(data));
-          navigate("/trangchu");
-        }
-        
-        
-        else {
+        } else {
           console.log(res);
-          alert("Thông Tin Tài Khoản Hoặc Mật Khẩu Ko Chính Xác");
+          alert('Thông Tin Tài Khoản Hoặc Mật Khẩu Ko Chính Xác');
         }
-      }
-    
-    
-    )
-      
+      })
+
       .catch((err) => console.log(err));
   }
   return (
@@ -79,5 +67,4 @@ function Login() {
       </div>
     </div>
   );
-}
-export default Login;
+};

@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import AdminLayout from '../../components/layout/adminlayout';
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import './index.css';
-import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-function Edituser() {
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import AdminLayout from '../../components/layout/adminlayout';
+import './index.css';
+export const Edituser = () => {
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
 
@@ -30,12 +30,12 @@ function Edituser() {
   }, []);
   const navigate = useNavigate();
 
-  useEffect(()=>{
+  useEffect(() => {
     let session = sessionStorage.getItem('account');
-    if(!session){
+    if (!session) {
       navigate('/');
     }
-  })
+  });
   return (
     <div>
       <AdminLayout>
@@ -76,12 +76,9 @@ function Edituser() {
                 Reset
               </button>
             </div>
-            
           </div>
         </form>
       </AdminLayout>
     </div>
   );
-}
-
-export default Edituser;
+};

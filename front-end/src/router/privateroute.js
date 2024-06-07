@@ -1,15 +1,22 @@
 import React, { useEffect } from 'react';
 import './index.css';
-import {  Route } from 'react-router-dom';
+import {  Route, Routes, useNavigate } from 'react-router-dom';
 
 function PrivateRoutes(props) {
-  useEffect(()=>{
+  const navigate = useNavigate();
 
-  },[]);
+  useEffect(()=>{
+    let session = sessionStorage.getItem('account');
+    if(!session){
+      navigate('/login');
+    }
+  },[])
   return (
     <>
-    <Route path={props.path} component={props.component}/>
+      <Routes>
+        <Route path={props.path} Component={props.component} />
+      </Routes>
     </>
-  )
+  );
 }
 export default PrivateRoutes;

@@ -1,9 +1,9 @@
-import React from 'react';
-import './index.css';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './index.css';
 export const Thietbi = ({ thietbi, getData }) => {
   function xoaPhongmay() {
     axios

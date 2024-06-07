@@ -1,31 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import AdminLayout from '../../components/layout/adminlayout';
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import './index.css';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import AdminLayout from '../../components/layout/adminlayout';
+import './index.css';
 
-function ThemGv() {
-    const [magv, setMagv] = useState('');
-    const [tengv, setTengv] = useState('');
-    const [avt, setAvt] = useState('');
-    const [khoa, setKhoa] = useState('');
-    function handleSubmit(event) {
-        event.preventDefault();
-        axios
-          .post('http://localhost:4000/lichsutk/create', {
-            magv,
-            tengv,
-            avt,
-            khoa,          
-          })
-          .then((res) => {
-            console.log(res.data);
-          })
-          .catch((err) => console.log(err));
-      }
-
+export const ThemGv = () => {
+  const [magv, setMagv] = useState('');
+  const [tengv, setTengv] = useState('');
+  const [avt, setAvt] = useState('');
+  const [khoa, setKhoa] = useState('');
+  function handleSubmit(event) {
+    event.preventDefault();
+    axios
+      .post('http://localhost:4000/lichsutk/create', {
+        magv,
+        tengv,
+        avt,
+        khoa,
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  }
 
   return (
     <div>
@@ -39,8 +37,12 @@ function ThemGv() {
               <div className=" mr-10">
                 <label htmlFor="ma-cauhinh">Mã Giáo Viên</label>
                 <br />
-                <input type="text" id="ma-cauhinh" value={magv}
-                  onChange={(e) => setMagv(e.target.value)}/>
+                <input
+                  type="text"
+                  id="ma-cauhinh"
+                  value={magv}
+                  onChange={(e) => setMagv(e.target.value)}
+                />
                 <br />
                 <label htmlFor="ma-lm">Tên Giáo Viên</label>
                 <br />
@@ -60,18 +62,18 @@ function ThemGv() {
                   value={avt}
                   onChange={(e) => setAvt(e.target.value)}
                 />
-                <br /><div className="">
-                <label htmlFor="ghichu">Khoa</label>
                 <br />
-                <input
-                  type="text"
-                  id="ma-hdh"
-                  value={khoa}
-                  onChange={(e) => setKhoa(e.target.value)}
-                />
-                <br />
-              </div>
-              
+                <div className="">
+                  <label htmlFor="ghichu">Khoa</label>
+                  <br />
+                  <input
+                    type="text"
+                    id="ma-hdh"
+                    value={khoa}
+                    onChange={(e) => setKhoa(e.target.value)}
+                  />
+                  <br />
+                </div>
               </div>
             </div>
           </div>
@@ -81,7 +83,8 @@ function ThemGv() {
               <button className="luu" type="submit">
                 <AddTaskIcon className=" mr-1" />
                 Lưu Dữ Liệu
-              </button><br/>
+              </button>
+              <br />
               <button className="reset" type="reset">
                 <RestartAltIcon className=" mr-1" />
                 Reset
@@ -92,6 +95,4 @@ function ThemGv() {
       </AdminLayout>
     </div>
   );
-}
-
-export default ThemGv;
+};

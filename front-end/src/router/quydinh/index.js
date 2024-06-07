@@ -1,8 +1,8 @@
 import React from 'react';
 import './index.css';
 
-import Booking from '../booking/booking';
-function Quydinh() {
+import {Booking} from '../booking';
+export const Quydinh=()=> {
   return (
     <Booking>
        <div className="lienhe2">
@@ -73,4 +73,4 @@ function Quydinh() {
     </Booking>
   );
 }
-export default Quydinh;
+

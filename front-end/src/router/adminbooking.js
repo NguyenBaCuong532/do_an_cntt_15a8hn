@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Booking from "./booking/booking";
+import {Booking} from "./booking";
 import './index.css'
-function Adminbooking() {
+export const Adminbooking =()=> {
   return <Booking>
     <>
-         <div className="tieude1">123</div>
+         <div className="tieude1"></div>
          
  </>
  </Booking>
   
   
 }
-export default Adminbooking;
+
