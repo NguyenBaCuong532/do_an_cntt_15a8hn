@@ -18,11 +18,12 @@ const navigate=useNavigate()
       .then((res) =>console.log(res.data))
       .catch((err) => console.log(err));
   }
-useEffect(()=>{
-  if(!localStorage.getItem('admin')){
-       navigate('/')
-  }
-},[])
+  useEffect(()=>{
+    let session = sessionStorage.getItem('account');
+    if(!session){
+      navigate('/login');
+    }
+  })
  
   return <AdminLayout><form onSubmit={handleSubmit} >
          <h4 className="tieude">Quản Lí Phòng Máy</h4>

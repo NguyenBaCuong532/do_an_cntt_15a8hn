@@ -1,0 +1,21 @@
+.quy a{
+    font-size: 20px;
+    color: #2e08da;
+    line-height: 30px;
+
+}
+.quy ul{
+    width: 85%;
+    background: #e5dede;
+
+}
+.quy ul li{
+    border: 2px solid #ccc;
+padding: 20px;
+}
+.quy ul li:hover{
+    background: #ded4d4;
+    cursor: pointer;
+
+
+}

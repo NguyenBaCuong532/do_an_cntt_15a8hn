@@ -11,7 +11,7 @@ const phongmayRoutes = require('./routes/phongmay');
 const lichsuRoutes = require('./routes/lichsutk');
 const thietbiRoutes = require('./routes/thietbi');
 const cauhinhRoutes = require('./routes/cauhinh');
-const qlmayRoutes = require('./routes/qlmay');
+const qldkymayRoutes = require('./routes/qldkymay');
 
 
 
@@ -21,7 +21,7 @@ app.use('/phongmay',phongmayRoutes)
 app.use('/lichsutk', lichsuRoutes);
 app.use('/thietbi', thietbiRoutes);
 app.use('/cauhinh', cauhinhRoutes);
-app.use('/qlmay', qlmayRoutes);
+app.use('/qldkymay', qldkymayRoutes);
 
 
 

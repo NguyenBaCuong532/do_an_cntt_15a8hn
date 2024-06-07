@@ -25,7 +25,7 @@ router.get("/", function (request, response) {
   if (whereSql.length > 0) {
     sql += " WHERE " + whereSql.join(" AND ") + "and user.permision = 1";
   } else {
-    sql += " where user.permision = 1";
+    sql += " where user.permisionID = 1";
   }
   database.query(sql, [], function (error, results) {
     if (error) throw error;

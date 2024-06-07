@@ -1,0 +1,49 @@
+.gioithieu p{
+    line-height: 50px;
+    font-size: 19px;
+}
+.gioithieu h2{
+    font-size: 30px;
+    margin-left: -30px;
+    margin-top: 30px;
+
+
+}
+.gioithieu i{
+    font-size: 20px;
+
+}
+.gioithieu{
+    width: 80%;
+}
+.gioithieu table td,th{
+    border: 3px solid #6c6b6b;
+    padding: 20px 60px;
+    
+ 
+}
+.gioithieu a{
+    font-size: 25px;
+    color: #1637da;
+}
+.anh{
+    width: 80%;
+    height: 600px;
+    background: url(../booking/anh3.png);
+    margin-left: 60px;
+    
+}
+.anh1{
+    width: 80%;
+    height: 600px;
+    background: url(../booking/anh2.png);
+    margin-left: 60px;
+    
+}
+.anh2{
+    width: 80%;
+    height: 600px;
+    background: url(../booking/anh1.png);
+    margin-left: 60px;
+    
+}

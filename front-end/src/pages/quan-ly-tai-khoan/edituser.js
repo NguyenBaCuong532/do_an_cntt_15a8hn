@@ -3,7 +3,7 @@ import AdminLayout from '../../components/layout/adminlayout';
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import './index.css';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 function Edituser() {
   const [fullname, setFullname] = useState('');
@@ -28,6 +28,14 @@ function Edituser() {
       })
       .catch((err) => console.log(err));
   }, []);
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    let session = sessionStorage.getItem('account');
+    if(!session){
+      navigate('/');
+    }
+  })
   return (
     <div>
       <AdminLayout>

@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./admin.css";
 import PersonIcon from '@mui/icons-material/Person';
 import ComputerIcon from '@mui/icons-material/Computer';
@@ -9,8 +9,14 @@ import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import FindReplaceIcon from '@mui/icons-material/FindReplace';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 function AdminLayout(props) {
-  
-  
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    let session = sessionStorage.getItem('account');
+    if(!session){
+      navigate('/login');
+    }
+  },[])
   return (
     <div className="admin-container ">
       <nav className="side-nav fixed" >
@@ -18,11 +24,11 @@ function AdminLayout(props) {
         <ul>
           <li>
             
-            <Link to="/quanlitaikhoan"><PersonIcon className="!w-10 !h-10" />Quản Lý Tài Khoản </Link>
+            <NavLink to="/quanlitaikhoan"><PersonIcon className="!w-10 !h-10" />Quản Lý Tài Khoản </NavLink>
           </li>
           <li>
             <ComputerIcon className="!text-[#fff] !w-10 !h-10" />
-            <Link to="/quanliphongmay">Quản Lý Phòng Máy</Link>
+            <NavLink to="/quanliphongmay">Quản Lý Phòng Máy</NavLink>
           </li>
           <li>
             <DeveloperBoardIcon className="!text-[#fff] !w-10 !h-10" />
@@ -31,21 +37,21 @@ function AdminLayout(props) {
 
           <li>
             <AdbIcon className="!text-[#fff] !w-10 !h-10" />
-            <Link to="/quanlicauhinh">Quản Lý Cấu Hình</Link>
+            <NavLink to="/quanlicauhinh">Quản Lý Cấu Hình</NavLink>
           </li>
           <li>
             <ImportantDevicesIcon className="!text-[#fff] !w-10 !h-10" />
-            <Link to="/quanlimay">Quản Lý Đăng Kí Máy</Link>
+            <NavLink to="/quanlydkypm">Quản Lý Đăng Kí Máy</NavLink>
           </li>
           <li>
             <FindReplaceIcon className="!text-[#fff] !w-10 !h-10" />
-            <Link to="/quanligiaovien">Quản Lý Giáo Viên</Link>
+            <NavLink to="/quanligiaovien">Quản Lý Giáo Viên</NavLink>
           </li>
         </ul>
      <button className=" mt-20 ml-20"   onClick={()=>{
         localStorage.removeItem('admin')
        }}> 
-        <Link to='/'>Logout</Link>
+        <NavLink to='/'>Logout</NavLink>
        </button> 
       </nav> 
       <main className=" pl-[350px] min-h-[100vh]">{props.children}

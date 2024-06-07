@@ -5,16 +5,28 @@ const router = express.Router();
 router.post('/', function (request, response) {
   let username = request.body.username;
   let password = request.body.password;
+  let permissionID ;
+  if(username != 'admin'){
+    permissionID=1
+  }
+  else permissionID=2
+console.log(permissionID)
+
   if (username && password) {
     database.query(
-      'SELECT * FROM user WHERE name = ? AND password = ?',
-      [username, password],
-      function (error, results) {
+      `SELECT * FROM user WHERE username = ? AND password = ? AND permisionID =?`,
+      [username, password,permissionID],
+      function (error, results) {console.log(results)
         if (error) throw error;
         if (results.length > 0) {
-          return response.json('Success');
+          if(results.permisionID === permissionID)
+          return response.json('Admin');
+        else 
+        return response.json('User');
+
+         
         } else {
-          return response.json('false');
+         return response.json('false');
         }
       },
     );

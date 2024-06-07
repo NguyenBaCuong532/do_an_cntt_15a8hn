@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 import AdminLayout from '../../components/layout/adminlayout';
 import './index.css';
 import { User } from './user';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const QuanLyTaiKhoan = (user) => {
   const [name, setName] = useState('');
@@ -17,7 +17,16 @@ const QuanLyTaiKhoan = (user) => {
   const [khoa, setKhoa] = useState('');
   const [data, setData] = useState([]);
 
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    let session = sessionStorage.getItem('account');
+    if(!session){
+      navigate('/login');
+    }
+  })
   function handleSubmit(event) {
+    
     event.preventDefault();
     axios
       .get('http://localhost:4000/user', { params: { fullname, email ,khoa} })
@@ -34,7 +43,7 @@ const QuanLyTaiKhoan = (user) => {
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }
- 
+  
   return (
 
 

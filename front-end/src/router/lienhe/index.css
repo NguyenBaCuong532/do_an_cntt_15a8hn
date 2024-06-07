@@ -1,0 +1,28 @@
+.lienhe h3{
+    font-size: 35px;
+    padding: 30px 0;
+    border-bottom: 2px solid #ccc;
+   
+    margin-left: -60px;
+}
+
+.lienhe .lienhe1{
+        padding: 30px 0;
+}
+.lienhe1 h4{
+    font-size: 25px;
+    font-weight: 600px;
+    margin: 30px 0 10px 0;
+    
+
+}
+.lienhe1 h2{
+    font-size: 20px;
+    font-weight: 600px;
+    
+
+
+}
+.lienhe1 p{
+        margin-left: 10px;
+}

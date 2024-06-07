@@ -16,7 +16,6 @@ const QuanLyPhongMay = (item) => {
   const [trangthai, setTrangthai] = useState('');
   const [data, setData] = useState([]);
 
-  
   function handleSubmit(event) {
     event.preventDefault();
     axios
@@ -35,14 +34,13 @@ const QuanLyPhongMay = (item) => {
   useEffect(() => {
     getData();
   }, []);
-  
-  function getData(){
+
+  function getData() {
     axios
       .get('http://localhost:4000/phongmay')
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }
-  
 
   return (
     <AdminLayout>
@@ -52,7 +50,7 @@ const QuanLyPhongMay = (item) => {
         </p>
         <div className=" table-user flex flex-col gap-2">
           <h2 className="form-search font-bold text-[1.35rem] py-[1.25rem]">
-             Tìm Kiếm
+            Tìm Kiếm
           </h2>
           <table>
             <tr>
@@ -71,25 +69,29 @@ const QuanLyPhongMay = (item) => {
                 />
               </td>
               <td>
-                <div className="select" 
-               
-                >
-                  <select className="chon"  onChange={(e) => setLoaiphong(e.target.value)}>
-                    <option >
-                      Chọn loại phòng
+                <div className="select">
+                  <select
+                    className="chon"
+                    onChange={(e) => setLoaiphong(e.target.value)}
+                  >
+                    <option>Chọn loại phòng</option>
+                    <option value="Phòng cấu hình cao">
+                      Phòng cấu hình cao
                     </option>
-                    <option value="Phòng cấu hình cao"  >Phòng cấu hình cao</option>
-                    <option value="Phòng cấu hình thường" >Phòng cấu hình thường</option>
+                    <option value="Phòng cấu hình thường">
+                      Phòng cấu hình thường
+                    </option>
                   </select>
                 </div>
               </td>
             </tr>
             <tr>
               <td>
-                <select className="chon"  onChange={(e) => setKhuvuc(e.target.value)}>
-                  <option  value='Chọn khu vực'>
-                    Chọn khu vực
-                  </option>
+                <select
+                  className="chon"
+                  onChange={(e) => setKhuvuc(e.target.value)}
+                >
+                  <option value="Chọn khu vực">Chọn khu vực</option>
                   <option value="Khu vực 1">Khu vực 1</option>
                   <option value="Khu vực 2">Khu vực 2</option>
                   <option value="Khu vực 3">Khu vực 3</option>
@@ -97,18 +99,25 @@ const QuanLyPhongMay = (item) => {
                 </select>
               </td>
               <td>
-                <select className="chon"  onChange={(e) => setTrangthai(e.target.value)}>
-                  <option >
-                    Trạng thái hoạt động
-                  </option>
+                <select
+                  className="chon"
+                  onChange={(e) => setTrangthai(e.target.value)}
+                >
+                  <option>Trạng thái hoạt động</option>
                   <option value="Đang sử dụng">Đang sử dụng</option>
                   <option value="Chưa sử dụng">Chưa sử dụng</option>
                 </select>
               </td>
               <td>
                 <div>
-                  <button className="luu" type='submit'><SearchIcon/>Tìm Kiếm</button>
-                  <button className="reset" type='reset'><RestartAltIcon/>Reset</button>
+                  <button className="luu" type="submit">
+                    <SearchIcon />
+                    Tìm Kiếm
+                  </button>
+                  <button className="reset" type="reset">
+                    <RestartAltIcon />
+                    Reset
+                  </button>
                 </div>
               </td>
             </tr>
@@ -117,7 +126,7 @@ const QuanLyPhongMay = (item) => {
         <div>
           <div className="table-cauhinh">
             <button className="form-tao">
-              <Link to={ `/quanliphongmay/formtaopm`}>
+              <Link to={`/quanliphongmay/formtaopm`}>
                 <AddIcon className="!text-[#edf0ed] !w-7 !h-7 mr-1 mb-1" />
                 Tạo Mới
               </Link>
@@ -130,11 +139,11 @@ const QuanLyPhongMay = (item) => {
                 <th>Loại Phòng</th>
                 <th>Số Lượng Máy</th>
                 <th>Khu Vực</th>
-             
+
                 <th>Thay Đổi</th>
               </tr>
               {data.map((phong, index) => {
-                return <Phongmay key={index} item={phong} getData={getData}/>;
+                return <Phongmay key={index} item={phong} getData={getData} />;
               })}
             </table>
           </div>
